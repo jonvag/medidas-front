@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app.layout.component';
 import { MypageComponent } from './core/components/pages/mypage/mypage.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 export const routes: Routes = [
 
@@ -10,5 +11,6 @@ export const routes: Routes = [
     children:[
       {path:'',component:MypageComponent},
     ]
-  }
+  },
+  { path: 'landing', component: LandingComponent },
 ];
