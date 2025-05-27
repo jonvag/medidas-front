@@ -17,7 +17,10 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Home',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                    { label: 'Login', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login'] },
+                    { label: 'landing', icon: 'pi pi-fw pi-globe', routerLink: ['/landing'] },
+                    { label: 'IMC', icon: 'pi pi-fw pi-globe', routerLink: ['/table-imc'] },
                 ]
             },
             {
@@ -59,20 +62,11 @@ export class AppMenuComponent implements OnInit {
                 label: 'Pages',
                 icon: 'pi pi-fw pi-briefcase',
                 items: [
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing']
-                    },
+
                     {
                         label: 'Auth',
                         icon: 'pi pi-fw pi-user',
                         items: [
-                            {
-                                label: 'Login',
-                                icon: 'pi pi-fw pi-sign-in',
-                                routerLink: ['/auth/login']
-                            },
                             {
                                 label: 'Error',
                                 icon: 'pi pi-fw pi-times-circle',

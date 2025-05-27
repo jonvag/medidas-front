@@ -27,22 +27,22 @@
 }
 
 .customer-badge {
-    &.status-qualified {
+    &.status-success {
         background: #C8E6C9;
         color: #256029;
     }
 
-    &.status-unqualified {
+    &.status-danger {
         background: #FFCDD2;
         color: #C63737;
     }
 
-    &.status-negotiation {
+    &.status-warning {
         background: #FEEDAF;
         color: #8A5340;
     }
 
-    &.status-new {
+    &.status-info {
         background: #B3E5FC;
         color: #23547B;
     }
