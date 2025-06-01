@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { delay, Observable } from 'rxjs';
 import { APP_CONFIG } from '../config/app-config.token';
+import { Client } from '../api/client';
 
 @Injectable({
   providedIn: 'root'
@@ -26,26 +27,49 @@ export class UsuariosService {
     return this.http.get(`${this.urlBase}/api/client`);
   }
 
-  //ejemplo apis con header
+  getClientsById(id_user: number): Observable<any> {
 
- /*  getPlatformsId(id: string): Observable<any> {
-    const apiurlTriggers: string = `${this.urlBase}/admin/platform/${id}`;
-
-    return this.http.get(apiurlTriggers);
+    return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`);
   }
 
-  putPlatformsId(form: any) {
-    const appUrl: string = `${this.urlBase}/admin/platform/${form.idPlatform}`;
+  deleteClient(id_client: number): Observable<any> {
+    console.log("api eliminar cliente ", id_client)
+    return this.http.delete(`${this.urlBase}/api/client/${id_client}`);
+  }
+
+  //ejemplo apis con header
+
+  postClientById(form: Client) {
     const userSessionName = localStorage.getItem('userSessionName');
     let headers = new HttpHeaders();
     if (userSessionName) {
       headers = headers.set('X-User-Session-Name', userSessionName);
     }
 
-    return this.http.put(`${appUrl}`, form, {
+    console.log("for de crear ", form)
+
+    return this.http.post(`${this.urlBase}/api/client`, form, {
       ...Option,
       headers: headers,
       responseType: 'json',
-    }).pipe(delay(1000));
-  } */
+      observe: 'response'
+    });
+  }
+
+  updateClient(form: Client) { // <-- Tipo de retorno y parámetro
+
+    const userSessionName = localStorage.getItem('userSessionName');
+    let headers = new HttpHeaders();
+
+    if (userSessionName) {
+      headers = headers.set('X-User-Session-Name', userSessionName);
+    }
+
+    return this.http.put<Client>(`${this.urlBase}/api/client/${form.client_id}`, form, {
+      headers: headers,
+      responseType: 'json',
+      observe: 'response'
+    });
+  }
+
 }

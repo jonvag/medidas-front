@@ -1,141 +1,159 @@
 <div class="col-12">
 	<div class="card">
-		<div class="card">
-			<span class="p-buttonset">
-				<button pButton pRipple label="Nuevo" icon="pi pi-plus" class="mr-2" (click)="openNew()"></button>
-				<button pButton pRipple label="Eliminar" icon="pi pi-trash" (click)="deleteSelectedProducts()" ></button>
-			</span>
-			<p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" class="p-fluid">
-            <ng-template pTemplate="content">
-                <div class="field">
-                    <label for="name">Nombre</label>
-                    <input type="text" pInputText id="name" [(ngModel)]="client.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !client.name}" autocomplete="off" />
-                    <small class="ng-dirty ng-invalid" *ngIf="submitted && !client.name">El nombre es requerido.</small>
-                </div>
-				<div class="field">
-                    <label class="mb-3">Sexo</label>
-                    <div class="formgrid grid">
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="hombre" name="sexo" value="Hombre" [(ngModel)]="client.sexo"></p-radioButton>
-                            <label for="hombre">Hombre</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="mujer" name="sexo" value="Mujer" [(ngModel)]="client.sexo"></p-radioButton>
-                            <label for="mujer">Mujer</label>
-                        </div>
-                    </div>
-                </div>
-				<div class="formgrid grid">
-                    <div class="field col">
-                        <label for="peso">Peso (Kg)</label>
-                        <p-inputNumber id="peso" [(ngModel)]="client.peso" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
-                    </div>
-                    <div class="field col">
-                        <label for="estatura">Estatura (Metros)</label>
-                        <p-inputNumber id="estatura" [(ngModel)]="client.estatura" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
-                    </div>
-                </div>
-				<div class="formgrid grid">
-                    <div class="field col">
-                        <label for="age">Edad</label>
-                        <p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0"  [maxFractionDigits]="0"  mode="decimal"></p-inputNumber>
-                    </div>
-                    <div class="field col">
-                        <label for="cc">circunferencia de cintura </label>
-                        <p-inputNumber id="cc" [(ngModel)]="client.cc" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
-                    </div>
-                </div>
-                <!-- <div class="field">
-                    <label for="description">Description</label>
-                    <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
-                </div>
-                <div class="field">
-                    <label for="status">Inventory Status</label>
-                    <p-dropdown [(ngModel)]="product.inventoryStatus" inputId="inventoryStatus" optionValue="label" [options]="statuses" placeholder="Select">
-                        <ng-template pTemplate="selectedItem">
-                            <span *ngIf="product && product.inventoryStatus" [class]="'product-badge status-' + product.inventoryStatus.toString().toLowerCase()">{{product.inventoryStatus}}</span>
-                        </ng-template>
-                        <ng-template let-option pTemplate="item">
-                            <span [class]="'product-badge status-' + option.value">{{option.label}}</span>
-                        </ng-template>
-                    </p-dropdown>
-                </div>
+            <p-confirmDialog header="Confirmar" key="confirm1" icon="pi pi-exclamation-triangle" message="Estas seguro?" [style]="{width: '350px'}" acceptButtonStyleClass="p-button-text" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+		
+		<!-- formulario ingresar cliente, por default viene oculto -->
+		<section>
+			<p-dialog [(visible)]="createClientDialog" [style]="{width: '450px'}" [header]="dialogHeader" [modal]="true" class="p-fluid">
+				<ng-template pTemplate="content">
+					<div class="field">
+						<label for="name">Nombre</label>
+						<input type="text" pInputText id="name" [(ngModel)]="client.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !client.name}" autocomplete="off" />
+						<small class="p-error" *ngIf="submitted && !client.name">El nombre es requerido.</small>
+					</div>
+					<div class="field">
+						<label for="email">Email</label>
+						<input type="email" pInputText id="email" [(ngModel)]="client.email" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !client.email}" autocomplete="off" />
+						<small class="p-error" *ngIf="submitted && formErrors()['email']">{{ formErrors()['email'] }}</small>
+					</div>
+					<div class="field">
+						<label class="mb-3">Sexo</label>
+						<div class="formgrid grid">
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="hombre" name="sexo" value="M" [(ngModel)]="client.sexo"></p-radioButton>
+								<label for="hombre">Hombre</label>
+							</div>
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="mujer" name="sexo" value="F" [(ngModel)]="client.sexo"></p-radioButton>
+								<label for="mujer">Mujer</label>
+							</div>
+						</div>
+						<small class="p-error" *ngIf="submitted && formErrors()['sexo']">{{ formErrors()['sexo'] }}</small>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="peso">Peso (Kg)</label>
+							<p-inputNumber id="peso" [(ngModel)]="client.peso" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
+						</div>
+						<div class="field col">
+							<label for="estatura">Estatura (Metros)</label>
+							<p-inputNumber id="estatura" [(ngModel)]="client.estatura" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
+						</div>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="age">Edad</label>
+							<p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0"  [maxFractionDigits]="0"  mode="decimal"></p-inputNumber>
+						</div>
+						<div class="field col">
+							<label for="circunferencia">circunferencia de cintura </label>
+							<p-inputNumber id="circunferencia" [(ngModel)]="client.circunferencia" [minFractionDigits]="2"  [maxFractionDigits]="2"  mode="decimal"></p-inputNumber>
+						</div>
+					</div>
+					<div class="field">
+					<label for="address">Dirección corta</label>
+						<input type="address" pInputText id="address" [(ngModel)]="client.address" required autofocus autocomplete="off" />
+					</div>
+					<div class="field">
+						<label class="mb-3">Estatus</label>
+						<div class="formgrid grid">
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="consulta" name="status" value="Consulta" [(ngModel)]="client.status"></p-radioButton>
+								<label for="consulta">Consulta</label>
+							</div>
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="fijo" name="status" value="Fijo" [(ngModel)]="client.status"></p-radioButton>
+								<label for="fijo">Fijo</label>
+							</div>
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="recomendado" name="status" value="Recomendado" [(ngModel)]="client.status"></p-radioButton>
+								<label for="recomendado">Recomendado</label>
+							</div>
+							<div class="field-radiobutton col-4">
+								<p-radioButton id="redes" name="status" value="Redes" [(ngModel)]="client.status"></p-radioButton>
+								<label for="redes">Redes</label>
+							</div>
+						</div>
+					</div>
+				</ng-template>
 
-                <div class="field">
-                    <label class="mb-3">Category</label>
-                    <div class="formgrid grid">
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="product.category"></p-radioButton>
-                            <label for="category1">Accessories</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="product.category"></p-radioButton>
-                            <label for="category2">Clothing</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="product.category"></p-radioButton>
-                            <label for="category3">Electronics</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="product.category"></p-radioButton>
-                            <label for="category4">Fitness</label>
-                        </div>
-                    </div>
-                </div>
+				<ng-template pTemplate="footer">
+					<button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+					@if (indicAgregarOrUpdate === true) {
+					<button pButton pRipple label="Crear" icon="pi pi-check" class="p-button-text" (click)="saveClient()"></button>
+					} @else {
+						<button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text" (click)="saveClient()"></button>
+					}
+				</ng-template>
+			</p-dialog>
+		</section>
 
-                <div class="formgrid grid">
-                    <div class="field col">
-                        <label for="price">Price</label>
-                        <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
-                    </div>
-                    <div class="field col">
-                        <label for="quantity">Quantity</label>
-                        <p-inputNumber id="quantity" [(ngModel)]="product.quantity"></p-inputNumber>
-                    </div>
-                </div> -->
-            </ng-template>
+		<!-- Table Clientes -->
+		<section>
+			<h5>Datos paciente</h5>
+			<div class="flex gap-3">
 
-            <ng-template pTemplate="footer">
-                <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-                <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveClient()"></button>
-            </ng-template>
-        </p-dialog>
-		</div>
-		<h5>Datos paciente</h5>
-		<p-toggleButton [(ngModel)]="idFrozen" [onIcon]="'pi pi-lock'" offIcon="pi pi-lock-open" [onLabel]="'Unfreeze Id'" offLabel="Freeze Id" [style]="{'width': '12rem'}"></p-toggleButton>
-		<p-table [value]="this.clients()" scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll">
-			<ng-template pTemplate="header">
-				<tr>
-					<th style="width:200px" pFrozenColumn>Nombre</th>
-					<th style="width:200px" alignFrozen="left" pFrozenColumn [frozen]="idFrozen">Id</th>
-					<th style="width:200px">Sexo</th>
-					<th style="width:200px">Edad</th>
-					<th style="width:200px">Peso</th>
-					<th style="width:200px">Estatura</th>
-					<!-- <th style="width:200px">IMC</th> -->
-					<th style="width:200px">CC</th>
-					<th style="width:200px">AM</th>
-					<th style="width:200px">%GC</th>
-					<th style="width:220px" pFrozenColumn alignFrozen="right">Status</th>
-				</tr>
-			</ng-template>
-			<ng-template pTemplate="body" let-customer>
-				<tr>
-					<td style="width:200px" pFrozenColumn class="font-bold">{{customer.name}}</td>
-					<td style="width:200px" alignFrozen="left" pFrozenColumn [frozen]="idFrozen" [ngClass]="{'font-bold': idFrozen}">{{customer.id}}</td>
-					<td style="width:200px">{{customer.sexo}}</td>
-					<td style="width:200px">{{customer.age}}</td>
-					<td style="width:200px">{{customer.peso}}Kg</td>
-					<td style="width:200px">{{customer.estatura}}mts</td>
-					<!-- <td style="width:200px;"><span class="customer-badge status-proposal">proposal</span></td> -->
-					<td style="width:200px">cc </td>
-					<td style="width:200px">function AM</td>
-					<td style="width:200px" ><span [class]="'customer-badge status-renewal'">function AM</span></td>
-					<td style="width:220px" pFrozenColumn  class="font-bold" alignFrozen="right"><span [class]="'customer-badge status-proposal'">{{customer.tipo}}</span></td>
-				</tr>
-			</ng-template>
-		</p-table>
+				<span class="p-buttonset">
+					<button pButton pRipple label="Nuevo" icon="pi pi-plus" class="mr-2" (click)="openNew(0)"></button>
+				</span>
+				<span class="block mt-2 md:mt-0 p-input-icon-left">
+					<i class="pi pi-search"></i>
+					<input pInputText type="text"  placeholder="Buscar..."  (input)="onGlobalFilter(dt, $event)"  class="w-full sm:w-auto"/>
+				</span>
+			</div>
+			<p-table #dt [value]="this.clients()" scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll"
+			responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name','age','sexo']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} entradas" selectionMode="multiple" [rowHover]="true" dataKey="id">
+				<ng-template pTemplate="header">
+					<tr>
+						<th pSortableColumn="name" style="width:200px">Nombre <p-sortIcon field="name"></p-sortIcon></th>
+						<th style="width:200px" class="hidden" alignFrozen="left" >Id</th>
+						<th pSortableColumn="sexo" style="width:200px">Sexo <p-sortIcon field="sexo"></p-sortIcon></th>
+						<th pSortableColumn="age" style="width:200px">Edad <p-sortIcon field="age"></p-sortIcon></th>
+
+						<th style="width:200px">Peso</th>
+						<th style="width:200px">Estatura</th>
+						<!-- <th style="width:200px">IMC</th> -->
+						<th style="width:200px">CC</th>
+						<th style="width:200px">AM</th>
+						<th style="width:200px">%GC</th>
+						<th style="width:220px"  alignFrozen="right">Status</th>
+						<th>Options</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-customer>
+					<tr>
+						<td style="width:200px"  class="font-bold">{{customer.name}}</td>
+						<td style="width:200px" class="hidden" alignFrozen="left">{{customer.id}}</td>
+						<td style="width:200px">{{customer.sexo}}</td>
+						<td style="width:200px">{{customer.age}}</td>
+						<td style="width:200px">{{customer.peso}}Kg</td>
+						<td style="width:200px">{{customer.estatura}}mts</td>
+						<!-- <td style="width:200px;"><span class="customer-badge status-proposal">proposal</span></td> -->
+						<td style="width:200px">cc </td>
+						<td style="width:200px">function AM</td>
+						<td style="width:200px" ><span [class]="'customer-badge status-renewal'">function AM</span></td>
+						<td style="width:220px"   class="font-bold" alignFrozen="right"><span [class]="'customer-badge status-proposal'">{{customer.tipo}}</span></td>
+						<td>
+							<div class="flex gap-2">
+								<button pButton pRipple type="button" (click)="openNew(customer)" icon="pi pi-pen-to-square" class="p-button-rounded p-button-success"></button>
+								<button pButton pRipple type="button" (click)="confirmDeleteClient(customer.id, customer.name)" icon="pi pi-trash" class="p-button-rounded p-button-danger"></button>
+							</div>
+						</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</section>
 	</div>
+</div>
+<p-toast></p-toast>
+
+<div class="card">
+    <button pButton type="button" label="Éxito" (click)="showSuccess()" class="p-button-success"></button>
+    <button pButton type="button" label="Información" (click)="showInfo()" class="p-button-info"></button>
+    <button pButton type="button" label="Advertencia" (click)="showWarning()" class="p-button-warning"></button>
+    <button pButton type="button" label="Error" (click)="showError()" class="p-button-danger"></button>
+    <button pButton type="button" label="Múltiples" (click)="showMultiple()" class="p-button-secondary"></button>
+    <button pButton type="button" label="Limpiar" (click)="clearMessages()" class="p-button-outlined"></button>
 </div>
 
     <!-- <div class="card">
