@@ -527,52 +527,6 @@ export class TableImcComponent {
     });
   }
 
-  showSuccess() {
-    this.messageService.add({
-      severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
-      summary: 'Éxito',    // Título del toast
-      detail: 'Operación completada correctamente.' // Contenido del toast
-    });
-  }
-
-  showInfo() {
-    this.messageService.add({
-      severity: 'info',
-      summary: 'Información',
-      detail: 'Aquí hay un mensaje informativo.'
-    });
-  }
-
-  showWarning() {
-    this.messageService.add({
-      severity: 'warn',
-      summary: 'Advertencia',
-      detail: 'Algo salió mal, pero no es crítico.'
-    });
-  }
-
-  showError() {
-    this.messageService.add({
-      severity: 'error',
-      summary: 'Error',
-      detail: 'Hubo un problema al procesar su solicitud.'
-    });
-  }
-
-  // Puedes mostrar múltiples mensajes a la vez
-  showMultiple() {
-    this.messageService.addAll([
-      { severity: 'success', summary: 'Mensaje 1', detail: 'Primer mensaje exitoso' },
-      { severity: 'info', summary: 'Mensaje 2', detail: 'Segundo mensaje informativo' },
-      { severity: 'warn', summary: 'Mensaje 3', detail: 'Tercer mensaje de advertencia' }
-    ]);
-  }
-
-  // Limpiar todos los mensajes
-  clearMessages() {
-    this.messageService.clear();
-  }
-
   onGlobalFilter(table: Table, event: Event) {
         table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
   }
