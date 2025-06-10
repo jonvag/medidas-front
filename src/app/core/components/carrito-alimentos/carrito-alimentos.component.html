@@ -1,0 +1,48 @@
+<div class="card">
+    <h5>Total</h5>
+    <!-- alimentos detail -->
+    <div>
+        @for (item of cartItems(); track item.alimento.id) {
+            <div class="card py-3 px-6 flex flex-wrap gap-2">
+                <div class="flex justify-content-between">
+                    <div>
+                        <span class="block text-500 font-medium">{{item.alimento.name}}</span>
+                        <div class="text-900 font-medium text-md">{{item.alimento.gramos}}gr</div>
+                    </div>
+                    
+                </div>
+                <div class="flex gap-4 w-full ">
+                        <button (click)="decrementQuantity(item.alimento)"  pButton pRipple type="button" icon="pi pi-minus" class="p-button-rounded p-button-help p-button-text"></button>
+                        <label class="text-xl mt-1">{{item.quantity}}</label>
+                        <button (click)="incrementQuantity(item.alimento)" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-help p-button-text"></button>
+			    </div>
+                
+                
+            </div>
+        }@empty {
+            <div class="card">
+                <p>Debe seleccionar un alimento...</p>
+            </div>
+        }
+    </div>
+    <!-- alimentos total -->
+    <div>
+        <hr>
+        <div class="card py-3 px-6">
+            <div class="flex justify-content-between">
+                <div>
+                    <span class="block text-500 font-medium text-xl">Alimentos</span>
+                    <div class="text-900 font-medium text-md">Proteinas</div>
+                    <div class="text-900 font-medium text-md">Almidones</div>
+                    <div class="text-900 font-medium text-md">Grasas</div>
+                </div>
+                <div>
+                    <span class="block text-500 font-medium">Total</span>
+                    <div class="text-900 font-medium text-md">{{totalAmount()}}gr</div>
+                    <!-- <div class="text-900 font-medium text-md">12</div>
+                    <div class="text-900 font-medium text-md">20</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

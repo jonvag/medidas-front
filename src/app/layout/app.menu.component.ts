@@ -1,9 +1,13 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
+import { CommonModule } from '@angular/common';
+import { AppMenuitemComponent } from './app.menuitem.component';
 
 @Component({
     selector: 'app-menu',
+    standalone: true,
+    imports: [CommonModule, AppMenuitemComponent],
     templateUrl: './app.menu.component.html'
 })
 export class AppMenuComponent implements OnInit {
@@ -17,13 +21,14 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Home',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/dashboard'] },
                     { label: 'Login', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login'] },
                     { label: 'landing', icon: 'pi pi-fw pi-globe', routerLink: ['/landing'] },
-                    { label: 'IMC', icon: 'pi pi-fw pi-globe', routerLink: ['/table-imc'] },
+                    { label: 'IMC', icon: 'pi pi-fw pi-globe', routerLink: ['/dashboard/table-imc'] },
+                    { label: 'Alimentos', icon: 'pi pi-fw pi-calculator', routerLink: ['/dashboard/porcion-alimentos'] },
                 ]
             },
-            {
+/*             {
                 label: 'UI Components',
                 items: [
                     { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
@@ -153,7 +158,7 @@ export class AppMenuComponent implements OnInit {
                         label: 'View Source', icon: 'pi pi-fw pi-search', url: ['https://github.com/primefaces/sakai-ng'], target: '_blank'
                     }
                 ]
-            }
+            } */
         ];
     }
 }

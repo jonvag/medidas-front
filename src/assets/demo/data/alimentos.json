@@ -1,0 +1,958 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"name": "Leche descremada 1%",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche baja en grasa"
+		},
+		{
+			"id": 2,
+			"name": "Yogurt con frutas descremada (sin azúcar)",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche baja en grasa"
+		},
+		{
+			"id": 3,
+			"name": "Leche descremada 1% en polvo",
+			"medidaPractica": "4 cucharadas",
+			"gramos": 32,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche baja en grasa"
+		},
+		{
+			"id": 4,
+			"name": "Leche evaporada descremada",
+			"medidaPractica": "½ taza 4 onzas",
+			"gramos": 120,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche baja en grasa"
+		},
+		{
+			"id": 5,
+			"name": "Yogurt simple descremado (firme)",
+			"medidaPractica": "¾ taza",
+			"gramos": 180,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche baja en grasa"
+		},
+		{
+			"id": 6,
+			"name": "Leche semidescremada al 2%",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche semidescremada"
+		},
+		{
+			"id": 7,
+			"name": "Leche acidificada",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche semidescremada"
+		},
+		{
+			"id": 8,
+			"name": "Leche semidescremada en polvo al 2%",
+			"medidaPractica": "4 cucharadas",
+			"gramos": 32,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche semidescremada"
+		},
+		{
+			"id": 9,
+			"name": "Yogurt líquido semidescremado c/ frutas",
+			"medidaPractica": "¾ taza",
+			"gramos": 180,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche semidescremada"
+		},
+		{
+			"id": 10,
+			"name": "Kéfir",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 11,
+			"name": "Leche entera",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 12,
+			"name": "Leche de cabra",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 13,
+			"name": "Suero de leche",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 14,
+			"name": "Leche entera en polvo",
+			"medidaPractica": "4 cucharadas",
+			"gramos": 32,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 15,
+			"name": "Leche evaporada",
+			"medidaPractica": "½ taza 4 onzas",
+			"gramos": 120,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Leche entera"
+		},
+		{
+			"id": 16,
+			"name": "Leche deslactosada",
+			"medidaPractica": "1 taza 8 onzas",
+			"gramos": 240,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Deslactosados"
+		},
+		{
+			"id": 17,
+			"name": "Yogurt deslactosado",
+			"medidaPractica": "¾ taza",
+			"gramos": 180,
+			"image": "bamboo-watch.jpg",
+			"category": "Leche y Sustitutos",
+			"subCategory": "Deslactosados"
+		},
+		{
+    "id": 18,
+    "name": "Acelgas",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 19,
+    "name": "Ají dulce",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 20,
+    "name": "Ajo",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 21,
+    "name": "Ajo porro",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 22,
+    "name": "Alcachofa",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 23,
+    "name": "Alfalfa",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 24,
+    "name": "Auyama",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 25,
+    "name": "Apio-España o Celery",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 26,
+    "name": "Berenjena",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 27,
+    "name": "Berros",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 28,
+    "name": "Brócoli",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 29,
+    "name": "Brotes o germinados chinos",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 30,
+    "name": "Calabacín",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 31,
+    "name": "Cebolla",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 32,
+    "name": "Cebollín",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 33,
+    "name": "Coliflor",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 34,
+    "name": "Chayota",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 35,
+    "name": "Chicoria o Escarola",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 36,
+    "name": "Espárragos",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 37,
+    "name": "Espinaca",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 38,
+    "name": "Hinojo",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 39,
+    "name": "Hongos o Champiñones",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 40,
+    "name": "Jugo de tomate",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 41,
+    "name": "Lechuga",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 42,
+    "name": "Nabo",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 43,
+    "name": "Palmito",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 44,
+    "name": "Pepino",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 45,
+    "name": "Perejil",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 46,
+    "name": "Pimentón",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 47,
+    "name": "Pimiento",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 48,
+    "name": "Quimbombó",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 49,
+    "name": "Rábanos",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 50,
+    "name": "Remolacha",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 51,
+    "name": "Repollitos de Bruselas",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 52,
+    "name": "Repollo blanco y morado",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 53,
+    "name": "Rúgula",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 54,
+    "name": "Radiquio",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 55,
+    "name": "Tomate",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 56,
+    "name": "Vainitas",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 57,
+    "name": "Zanahoria",
+    "medidaPractica": "½ taza cocidos o 1 taza crudos",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Hostaliza y Vegetales",
+    "subCategory": "Hostaliza y Vegetales"
+  },
+  {
+    "id": 58,
+    "name": "Cambur guineo",
+    "medidaPractica": "½ unidad",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 59,
+    "name": "Grapefruit",
+    "medidaPractica": "½ unidad",
+    "gramos": 180,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 60,
+    "name": "Toronja",
+    "medidaPractica": "½ unidad",
+    "gramos": 180,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 61,
+    "name": "Manzana con piel",
+    "medidaPractica": "1 unidad pequeña o ½ unidad grande",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 62,
+    "name": "Pera",
+    "medidaPractica": "1 unidad pequeña o ½ unidad grande",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+   {
+    "id": 63,
+    "name": "Cambur manzano",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 64,
+    "name": "Kiwi",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 65,
+    "name": "Mamey",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 170,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 66,
+    "name": "Mango",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 67,
+    "name": "Naranja",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 190,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 68,
+    "name": "Nectarina",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 69,
+    "name": "Níspero",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 70,
+    "name": "Riñon",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 80,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 71,
+    "name": "Albaricoque",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 110,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 72,
+    "name": "Fruta de pan",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 70,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 73,
+    "name": "Guayaba rosada",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 200,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 74,
+    "name": "Granadina",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 75,
+    "name": "Hicaco",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 76,
+    "name": "Jobo",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 77,
+    "name": "Mandarina",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 130,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 78,
+    "name": "Melocotón",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 80,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 79,
+    "name": "Tuna",
+    "medidaPractica": "1 unidad mediana",
+    "gramos": 80,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 80,
+    "name": "Ciruelas (importadas)",
+    "medidaPractica": "2 unidades pequeñas",
+    "gramos": 150,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 81,
+    "name": "Durazno",
+    "medidaPractica": "2 unidades pequeñas",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 82,
+    "name": "Higo (fresco)",
+    "medidaPractica": "2 unidades pequeñas",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 83,
+    "name": "Parchita",
+    "medidaPractica": "2 unidades pequeñas",
+    "gramos": 140,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 84,
+    "name": "Pomarrosa o Pomagás",
+    "medidaPractica": "2 unidades pequeñas",
+    "gramos": 150,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 85,
+    "name": "Ciruela de huesito",
+    "medidaPractica": "8 unidades",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 86,
+    "name": "Cerezas (semeruco)",
+    "medidaPractica": "12 unidades",
+    "gramos": 160,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 87,
+    "name": "Uvas",
+    "medidaPractica": "15 unidades pequeñas, 12 unidades medianas o 6 unidades grandes",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 88,
+    "name": "Zapote",
+    "medidaPractica": "¼ unidad",
+    "gramos": 60,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 89,
+    "name": "Piña",
+    "medidaPractica": "¾ taza",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 90,
+    "name": "Mora",
+    "medidaPractica": "¾ taza",
+    "gramos": 120,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 91,
+    "name": "Ensaladas de frutas naturales",
+    "medidaPractica": "½ taza",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 92,
+    "name": "Guanábana (pulpa)",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 93,
+    "name": "Mango",
+    "medidaPractica": "½ taza",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 94,
+    "name": "Fresas",
+    "medidaPractica": "1 Taza",
+    "gramos": 180,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 95,
+    "name": "Mamón",
+    "medidaPractica": "1 Taza",
+    "gramos": 90,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 96,
+    "name": "Melón verde",
+    "medidaPractica": "1 ½ taza",
+    "gramos": 200,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  }, {
+    "id": 97,
+    "name": "Lechosa",
+    "medidaPractica": "2 tazas (en cubos)",
+    "gramos": 200,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 98,
+    "name": "Melón rosado",
+    "medidaPractica": "2 tazas (en cubos)",
+    "gramos": 300,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 99,
+    "name": "Patilla",
+    "medidaPractica": "2 tazas (en cubos)",
+    "gramos": 300,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 100,
+    "name": "Tamarindo (pulpa)",
+    "medidaPractica": "1 cucharada",
+    "gramos": 20,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Frescas"
+  },
+  {
+    "id": 101,
+    "name": "Albaricoque",
+    "medidaPractica": "8 unidades pequeñas (orejones)",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  },{
+    "id": 102,
+    "name": "Ciruelas pasas",
+    "medidaPractica": "3 unidades",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  },
+  {
+    "id": 103,
+    "name": "Dátiles",
+    "medidaPractica": "3 unidades",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  },
+  {
+    "id": 104,
+    "name": "Higos",
+    "medidaPractica": "1 ½ unidades",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  },
+  {
+    "id": 105,
+    "name": "Manzana",
+    "medidaPractica": "4 unidades (aros)",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  },
+  {
+    "id": 106,
+    "name": "Pasitas",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 0,
+    "image": "bamboo-watch.jpg",
+    "category": "Frutas",
+    "subCategory": "Frutas Deshidratadas"
+  }
+
+
+	]
+}

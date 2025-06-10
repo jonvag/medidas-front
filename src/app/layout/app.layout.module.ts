@@ -21,12 +21,6 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
-        AppMenuitemComponent,
-        AppTopBarComponent,
-        AppFooterComponent,
-        AppMenuComponent,
-        AppSidebarComponent,
-        AppLayoutComponent,
     ],
     imports: [
         CommonModule,
@@ -41,6 +35,6 @@ import { CommonModule } from '@angular/common';
         RouterModule,
         AppConfigModule
     ],
-    exports: [AppLayoutComponent]
+    exports: []
 })
 export class AppLayoutModule { }

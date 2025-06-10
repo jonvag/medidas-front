@@ -1,28 +1,56 @@
 import { Component, inject } from '@angular/core';
 
 //primegn
-import { MessageService } from 'primeng/api';
+import { MessageService, SelectItem } from 'primeng/api';
 import { LayoutService } from '../../../layout/service/app.layout.service';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { DataView } from 'primeng/dataview';
+import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+
+import { ProductService } from '../../service/product.service';
+import { Product } from '../../api/product';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CarritoAlimentosComponent } from "../carrito-alimentos/carrito-alimentos.component";
+import { CarritoAlimentosService } from '../../service/carrito-alimentos.service';
+import { Alimento } from '../../api/alimento';
+import { AlimentosService } from '../../service/alimentos.service';
 
 
 @Component({
   selector: 'app-porcion-alimentos',
   standalone: true,
-  imports: [ButtonModule, ToastModule],
+  imports: [CommonModule, FormsModule, ButtonModule, ToastModule, DataViewModule, DropdownModule, InputTextModule, CarritoAlimentosComponent],
   templateUrl: './porcion-alimentos.component.html',
   styleUrl: './porcion-alimentos.component.css',
   providers:[MessageService]
 })
 export class PorcionAlimentosComponent {
   private messageService= inject(MessageService);
+  private carritoAlimentosService= inject(CarritoAlimentosService);
+  private alimentosService= inject(AlimentosService);
   public layoutService= inject(LayoutService);
+
+  alimentos: Alimento[] = [];
+  sortOptions: SelectItem[] = [];
+  sortOrder: number = 0;
+  sortField: string = '';
+
+  constructor() { }
   
 
   ngOnInit(): void {
     
     this.changeTheme('arya-green', 'dark');
+    this.cargaInicial();
+
+    this.sortOptions = [
+      { label: 'Price High to Low', value: '!price' },
+      { label: 'Price Low to High', value: 'price' }
+    ];
     
   }
 
@@ -38,6 +66,14 @@ export class PorcionAlimentosComponent {
       });
   }
 
+  cargaInicial(): void {
+      this.alimentosService.getAlimentos().subscribe(((alimentos: any) => {
+        
+        this.alimentos = alimentos.data;
+        console.log("alimentos ", this.alimentos);
+       }));
+    }
+
   replaceThemeLink(href: string, onComplete: Function) {
     const id = 'theme-css';
     const themeLink = <HTMLLinkElement>document.getElementById('theme-css');
@@ -51,6 +87,22 @@ export class PorcionAlimentosComponent {
         onComplete();
     });
   }
+
+    onSortChange(event: any) {
+        const value = event.value;
+
+        if (value.indexOf('!') === 0) {
+            this.sortOrder = -1;
+            this.sortField = value.substring(1, value.length);
+        } else {
+            this.sortOrder = 1;
+            this.sortField = value;
+        }
+    }
+
+    onFilter(dv: DataView, event: Event) {
+        dv.filter((event.target as HTMLInputElement).value);
+    }
   
 
 
@@ -98,6 +150,11 @@ export class PorcionAlimentosComponent {
   // Limpiar todos los mensajes
   clearMessages() {
     this.messageService.clear();
+  }
+
+  addProductToCart(alimento: Alimento) {
+    this.carritoAlimentosService.addToCart(alimento);
+    console.log(`Añadido al carrito: ${alimento.name}`);
   }
 
 }
