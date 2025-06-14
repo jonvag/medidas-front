@@ -951,8 +951,963 @@
     "image": "bamboo-watch.jpg",
     "category": "Frutas",
     "subCategory": "Frutas Deshidratadas"
+  },
+  {
+    "id": 107,
+    "name": "Arepa de maíz",
+    "medidaPractica": "1 unidad (pequeña)",
+    "gramos": 40,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 108,
+    "name": "Tortilla de maíz",
+    "medidaPractica": "(13 cm diámetro) 1 unidad",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 109,
+    "name": "Mazorca",
+    "medidaPractica": "½ unidad",
+    "gramos": 70,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 110,
+    "name": "Arroz cocido",
+    "medidaPractica": "½ taza",
+    "gramos": 80,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 111,
+    "name": "Cereales cocidos en agua",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 112,
+    "name": "Cereales integrales (Special K, All Bran, etc.)",
+    "medidaPractica": "½ taza",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 113,
+    "name": "Hojuelas de maíz azucaradas",
+    "medidaPractica": "½ taza",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 114,
+    "name": "Maíz (en granos)",
+    "medidaPractica": "½ taza",
+    "gramos": 120,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },{
+    "id": 115,
+    "name": "Arroz inflado",
+    "medidaPractica": "¾ taza",
+    "gramos": 25,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 116,
+    "name": "Hojuelas de maíz",
+    "medidaPractica": "¾ taza",
+    "gramos": 25,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },{
+    "id": 117,
+    "name": "Cotufas (sin grasa)",
+    "medidaPractica": "3 tazas",
+    "gramos": 25,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 118,
+    "name": "Granola baja en grasa",
+    "medidaPractica": "¼ taza",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 119,
+    "name": "Muesli",
+    "medidaPractica": "¼ taza",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },{
+    "id": 120,
+    "name": "Pastas",
+    "medidaPractica": "½ taza",
+    "gramos": 70,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 121,
+    "name": "Avena (en hojuelas)",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 16,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+    {
+    "id": 122,
+    "name": "Chía",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 16,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 123,
+    "name": "Germen de trigo (sin miel)",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 16,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },
+  {
+    "id": 124,
+    "name": "Harina de arroz, avena, cebada o maicena",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 16,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Cereales"
+  },{
+    "id": 125,
+    "name": "Apio, ñame, ocumo, yuca, topocho",
+    "medidaPractica": "1 trozo (pequeño)",
+    "gramos": 60,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 126,
+    "name": "Apio, batata, ñame, papa ocumo (puré sin grasa ni leche) Papa (puré sin grasa ni leche)",
+    "medidaPractica": "½ taza",
+    "gramos": 110,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 127,
+    "name": "Batata",
+    "medidaPractica": "1 trozo",
+    "gramos": 65,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 128,
+    "name": "Papa",
+    "medidaPractica": "1 unidad (pequeña)",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 129,
+    "name": "Papa amarilla colombiana (mini)",
+    "medidaPractica": "5 unidades",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 130,
+    "name": "Plátano",
+    "medidaPractica": "¼ unidad",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Tubérculos y Plátano"
+  },
+  {
+    "id": 131,
+    "name": "Arvejas",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 132,
+    "name": "Caraotas negras, blancas y rojas.",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 133,
+    "name": "Frijoles",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 134,
+    "name": "Frijol Bayo",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 135,
+    "name": "Garbanzos",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 136,
+    "name": "Guisantes",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 137,
+    "name": "Habas",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 138,
+    "name": "Lentejas",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 139,
+    "name": "Quinchoncho",
+    "medidaPractica": "½ taza",
+    "gramos": 100,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },
+  {
+    "id": 140,
+    "name": "Quínoa",
+    "medidaPractica": "¼ taza",
+    "gramos": 40,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Leguminosas"
+  },{
+    "id": 141,
+    "name": "Árabe-pita (grande)",
+    "medidaPractica": "¼ unidad",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 142,
+    "name": "Árabe-pita (mediano)",
+    "medidaPractica": "½ unidad",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 143,
+    "name": "Bajo en calorías (ligero)",
+    "medidaPractica": "2 rebanadas",
+    "gramos": 36,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+   "id": 144,
+    "name": "Sueco",
+    "medidaPractica": "2 rebanadas",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 145,
+    "name": "Crotones (sin grasa)",
+    "medidaPractica": "1 taza",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 146,
+    "name": "Francés, Italiano, Canilla o Campesino",
+    "medidaPractica": "¼ unidad",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+   {
+    "id": 147,
+    "name": "Hamburguesa, perro caliente o francés",
+    "medidaPractica": "½ unidad",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 148,
+    "name": "Panecillos, Ázimo (matzoh)",
+    "medidaPractica": "½ unidad",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 149,
+     "name": "Pan de banquete",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 150,
+    "name": "Rallado o miga de pan",
+    "medidaPractica": "3 cucharadas rasas",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },
+  {
+    "id": 151,
+    "name": "Sándwich blanco o integral",
+    "medidaPractica": "1 rebanada",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Panes"
+  },{
+    "id": 152,
+    "name": "De soda",
+    "medidaPractica": "3 unidades (1 paquete)",
+    "gramos": 25,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 153,
+    "name": "Dulces tipo María",
+    "medidaPractica": "3 unidades (1 paquete)",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 154,
+    "name": "Integrales",
+    "medidaPractica": "3 unidades (1 paquete)",
+    "gramos": 30,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 155,
+    "name": "De arroz",
+    "medidaPractica": "2 unidades grandes o 3 unidades pequeñas",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 156,
+    "name": "De maíz",
+    "medidaPractica": "2 unidades grandes o 5 unidades pequeñas",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 157,
+    "name": "Dulces sin glutten",
+    "medidaPractica": "3 unidades pequeñas",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Galletas"
+  },
+  {
+    "id": 158,
+    "name": "Cachapa",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Alimentos preparados"
+  },
+  {
+    "id": 159,
+    "name": "Panqueca (9 cm diámetro)",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Alimentos preparados"
+  },
+  {
+    "id": 160,
+    "name": "Ponqué (6 cm diámetro)",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Alimentos preparados"
+  },
+  {
+    "id": 161,
+    "name": "Casabe",
+    "medidaPractica": "1 trozo pequeño",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 162,
+    "name": "Casabitos",
+    "medidaPractica": "5 unidades",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 163,
+    "name": "Hallaquita o bollito de maíz",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 164,
+    "name": "Hallaquita o bollito de arroz",
+    "medidaPractica": "1 unidad pequeña",
+    "gramos": 50,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 165,
+    "name": "Petit pois frescos, congelados o enlatados sin sodio",
+    "medidaPractica": "½ taza",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 166,
+    "name": "Señoritas",
+    "medidaPractica": "2 unidades",
+    "gramos": 20,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 167,
+    "name": "Taco mexicano",
+    "medidaPractica": "2 unidades",
+    "gramos": 0,
+    "image": "",
+    "category": "ALMIDONES, CEREALES y PANES",
+    "subCategory": "Otros"
+  },
+  {
+    "id": 168,
+    "name": "Animales de caza: faisán (sin piel), venado, búfalo, ganso (sin piel), conejo",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molido, mechado o desmenuzado sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 169,
+    "name": "Aves de corral: pollo, gallina o pavo (carne blanca s/piel)",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molido, mechado o desmenuzado sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 170,
+    "name": "Pescados: fresco o congelado, lenguado, bacalao, atún",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molido, mechado o desmenuzado sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 171,
+    "name": "Sardina Fresca",
+    "medidaPractica": "5 unidades",
+    "gramos": 35,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 172,
+    "name": "Huevos: claras (gallina)",
+    "medidaPractica": "2 unidades",
+    "gramos": 50,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 173,
+    "name": "Mariscos y/o moluscos: almejas, langosta, camarón",
+    "medidaPractica": "sin medida practica",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 174,
+    "name": "Queso: Parmesano rallado",
+    "medidaPractica": "1 cucharada rasa",
+    "gramos": 15,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Magras"
+  },
+  {
+    "id": 175,
+    "name": "Animales de caza: cordero (costilla), ternera (chuleta)",
+    "medidaPractica": "1 trozo pequeño",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 176,
+    "name": "Aves de corral: pollo, gallina o pavo (carne oscura c/ piel)",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molida, mechado o desmenuzado, sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 177,
+    "name": "Res: la mayoría de las carnes res entran en esta categoría",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molida, mechado o desmenuzado, sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 178,
+    "name": "Cerdo: lomo",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molida, mechado o desmenuzado, sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+   "id": 179,
+    "name": "Pescados: cualquier tipo",
+    "medidaPractica": "1 trozo pequeño o 2 cucharadas (molida, mechado o desmenuzado, sin aliños)",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 180,
+    "name": "Huevos: Entero (gallina)",
+    "medidaPractica": "1 unidad",
+    "gramos": 50,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 181,
+    "name": "Mozzarella Quesos (con 5 g de grasa)",
+    "medidaPractica": "1 reb gruesa o 2 finas",
+    "gramos": 30,
+    "image": "",
+     "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 182,
+    "name": "Mozzarella de búfala Quesos (con 5 g de grasa)",
+    "medidaPractica": "1 reb gruesa o ¼ unid.",
+    "gramos": 30,
+    "image": "",
+     "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 183,
+    "name": "Guayanés, Ricotta o Cuajada Quesos (con 5 g de grasa)",
+    "medidaPractica": "¼ taza",
+    "gramos": 30,
+    "image": "",
+     "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 184,
+    "name": "Primavera, Palmita, Palmizulia o Paisa Quesos (con 5 g de grasa)",
+    "medidaPractica": "sin medida practica",
+    "gramos": 30,
+    "image": "",
+     "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes Semigordas"
+  },
+  {
+    "id": 185,
+    "name": "Bologna",
+    "medidaPractica": "1 rebanada",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes gordas"
+  },
+  {
+    "id": 186,
+    "name": "Salami",
+    "medidaPractica": "5 rebanadas",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes gordas"
+  },
+  {
+    "id": 187,
+    "name": "Salchicha",
+    "medidaPractica": "1 unidad regular",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes gordas"
+  },
+  {
+    "id": 188,
+    "name": "Queso amarillo tipo Gouda",
+    "medidaPractica": "1 reb gruesa o 2 finas",
+    "gramos": 30,
+    "image": "",
+    "category": "CARNES O SUSTITUTOS",
+    "subCategory": "Carnes gordas"
+  },{
+    "id": 189,
+    "name": "Aceite (canola, oliva, maní)",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 190,
+    "name": "Aceitunas: Negras",
+    "medidaPractica": "8 unidades grandes",
+    "gramos": 30,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 191,
+    "name": "Aceitunas: Verdes (rellenas)",
+    "medidaPractica": "10 unidades grandes",
+    "gramos": 30,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 192,
+    "name": "Aguacate",
+    "medidaPractica": "1/8 unidad 2 cucharadas trituradas",
+    "gramos": 30,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 193,
+    "name": "Mantequilla de almendra o maní",
+    "medidaPractica": "2 cucharaditas",
+    "gramos": 10,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 194,
+    "name": "Nueces: Almendras",
+    "medidaPractica": "6 unidades",
+    "gramos": 6,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 195,
+    "name": "Nueces: Maní (en concha)",
+    "medidaPractica": "10 unidades",
+    "gramos": 6,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 196,
+    "name": "Nueces: Nuez lisa",
+    "medidaPractica": "2 unidades",
+    "gramos": 0,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+    {
+    "id": 197,
+    "name": "Semillas de ajonjolí",
+    "medidaPractica": "1 cucharada",
+    "gramos": 0,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Monoinsaturadas"
+  },
+  {
+    "id": 198,
+    "name": "Aceite: maíz, girasol o soya",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 199,
+    "name": "Mayonesa (regular)",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 200,
+    "name": "Aderezo bajo en grasas (Miracle Whip®)",
+    "medidaPractica": "2 cucharaditas",
+    "gramos": 10,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 201,
+    "name": "Linaza en polvo",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 20,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 202,
+    "name": "Margarina sin sólidos de leche tipo Kosher",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 203,
+    "name": "Mayonesa (ligera)",
+    "medidaPractica": "2 cucharaditas",
+    "gramos": 10,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+   {
+    "id": 204,
+    "name": "Nueces",
+    "medidaPractica": "2 unidades",
+    "gramos": 0,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Poliinsaturadas"
+  },
+  {
+    "id": 205,
+    "name": "Aceite de coco",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 206,
+    "name": "Coco endulzado, rallado",
+    "medidaPractica": "2 cucharadas",
+    "gramos": 0,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 207,
+    "name": "Mantequilla",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 208,
+    "name": "Manteca de cerdo",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 209,
+    "name": "Margarina regular",
+    "medidaPractica": "1 cucharadita",
+    "gramos": 5,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 210,
+    "name": "Margarina (ligera)",
+    "medidaPractica": "2 cucharaditas",
+    "gramos": 10,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 211,
+    "name": "Queso crema regular",
+    "medidaPractica": "1 cucharada",
+    "gramos": 15,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 212,
+    "name": "Queso fundido estilo americano",
+    "medidaPractica": "1 cucharada",
+    "gramos": 15,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
+  },
+  {
+    "id": 213,
+    "name": "Tocineta (cocida)",
+    "medidaPractica": "2 unidades finas tostaditas o 1 unidad gruesa tostadita",
+    "gramos": 9,
+    "image": "",
+    "category": "GRASAS",
+    "subCategory": "Grasas Saturadas"
   }
-
 
 	]
 }
