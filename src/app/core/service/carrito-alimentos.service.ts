@@ -16,6 +16,7 @@ export class CarritoAlimentosService {
   constructor() { }
 
   addToCart(alimento: Alimento) {
+    console.log("alimento ", alimento);
     this.cartItems.update(items => {
       const existingItem = items.find(item => item.alimento.id === alimento.id);
 

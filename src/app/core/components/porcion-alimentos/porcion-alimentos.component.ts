@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 
 //primegn
 import { MessageService, SelectItem } from 'primeng/api';
@@ -26,85 +26,102 @@ import { AlimentosService } from '../../service/alimentos.service';
   imports: [CommonModule, FormsModule, ButtonModule, ToastModule, DataViewModule, DropdownModule, InputTextModule, CarritoAlimentosComponent],
   templateUrl: './porcion-alimentos.component.html',
   styleUrl: './porcion-alimentos.component.css',
-  providers:[MessageService]
+  providers: [MessageService]
 })
 export class PorcionAlimentosComponent {
-  private messageService= inject(MessageService);
-  private carritoAlimentosService= inject(CarritoAlimentosService);
-  private alimentosService= inject(AlimentosService);
-  public layoutService= inject(LayoutService);
+  private messageService = inject(MessageService);
+  private carritoAlimentosService = inject(CarritoAlimentosService);
+  private alimentosService = inject(AlimentosService);
+  public layoutService = inject(LayoutService);
 
   alimentos: Alimento[] = [];
   sortOptions: SelectItem[] = [];
   sortOrder: number = 0;
   sortField: string = '';
 
+  @ViewChild('dv') dv!: DataView; // Referencia al p-dataView en el HTML
+
+  // --- Nuevas propiedades para el filtro de categoría ---
+  categoryOptions: SelectItem[] = []; // Opciones para el desplegable de categorías
+  selectedCategory: string | null = null; // Almacena la categoría seleccionada
+  // ----------------------------------------------------
+
   constructor() { }
-  
+
 
   ngOnInit(): void {
-    
-    this.changeTheme('arya-green', 'dark');
+    this.categoryOptions = [
+      { label: 'Todas las categorias', value: null },
+      { label: 'Hostaliza y Vegetales', value: 'Hostaliza y Vegetales' },
+      { label: 'Frutas', value: 'Frutas' },
+      { label: 'Leche y Sustitutos', value: 'Leche y Sustitutos' },
+      { label: 'Almidones, Cereales y Panes', value: 'Almidones, Cereales y Panes' },
+      { label: 'Carnes y Sustitutos', value: 'Carnes y Sustitutos' },
+      { label: 'Grasas', value: 'Grasas' },
+    ];
+
     this.cargaInicial();
 
     this.sortOptions = [
-      { label: 'Price High to Low', value: '!price' },
-      { label: 'Price Low to High', value: 'price' }
+      { label: 'Nombre (Ascendente)', value: 'name' },
+      { label: 'Nombre (Descendente)', value: '!name' },
+      { label: 'Categoría (Ascendente)', value: 'category' },
+      { label: 'Categoría (Descendente)', value: '!category' },
+      { label: 'Subcategoría (Ascendente)', value: 'subCategory' },
+      { label: 'Subcategoría (Descendente)', value: '!subCategory' },
+      // Puedes añadir más opciones si quieres ordenar por gramos, etc.
     ];
-    
-  }
 
-  changeTheme(theme: string, colorScheme: string) {
-      const themeLink = <HTMLLinkElement>document.getElementById('theme-css');
-      const newHref = themeLink.getAttribute('href')!.replace(this.layoutService.config.theme, theme);
-      console.log("tema ", theme, "color ", colorScheme);
-      this.layoutService.config.colorScheme
-      this.replaceThemeLink(newHref, () => {
-          this.layoutService.config.theme = theme;
-          this.layoutService.config.colorScheme = colorScheme;
-          this.layoutService.onConfigUpdate();
-      });
   }
 
   cargaInicial(): void {
-      this.alimentosService.getAlimentos().subscribe(((alimentos: any) => {
-        
-        this.alimentos = alimentos.data;
-        console.log("alimentos ", this.alimentos);
-       }));
-    }
+    this.alimentosService.getAlimentos().subscribe(((alimentos: any) => {
 
-  replaceThemeLink(href: string, onComplete: Function) {
-    const id = 'theme-css';
-    const themeLink = <HTMLLinkElement>document.getElementById('theme-css');
-    const cloneLinkElement = <HTMLLinkElement>themeLink.cloneNode(true);
-    cloneLinkElement.setAttribute('href', href);
-    cloneLinkElement.setAttribute('id', id + '-clone');
-    themeLink.parentNode!.insertBefore(cloneLinkElement, themeLink.nextSibling);
-    cloneLinkElement.addEventListener('load', () => {
-        themeLink.remove();
-        cloneLinkElement.setAttribute('id', id);
-        onComplete();
-    });
+      this.alimentos = alimentos.data;
+      console.log("alimentos ", this.alimentos);
+    }));
   }
 
-    onSortChange(event: any) {
-        const value = event.value;
+  onSortChange(event: any) {
+    const value = event.value;
 
-        if (value.indexOf('!') === 0) {
-            this.sortOrder = -1;
-            this.sortField = value.substring(1, value.length);
-        } else {
-            this.sortOrder = 1;
-            this.sortField = value;
-        }
+    if (value.indexOf('!') === 0) {
+      this.sortOrder = -1;
+      this.sortField = value.substring(1, value.length);
+    } else {
+      this.sortOrder = 1;
+      this.sortField = value;
     }
+  }
 
-    onFilter(dv: DataView, event: Event) {
-        dv.filter((event.target as HTMLInputElement).value);
+  onFilter(dv: DataView, event: Event) {
+    dv.filter((event.target as HTMLInputElement).value);
+  }
+
+  loadCategoryOptions() {
+    if (this.alimentos && this.alimentos.length > 0) {
+      // Extrae todas las categorías únicas de tus alimentos
+      const uniqueCategories = [...new Set(this.alimentos.map(item => item.category))];
+
+      // Crea las opciones para el dropdown
+      this.categoryOptions = [
+        { label: 'Todas las Categorías', value: null }, // Opción para mostrar todos los alimentos
+        ...uniqueCategories.map(cat => ({ label: cat, value: cat }))
+      ];
     }
-  
+  }
 
+  onCategoryFilterChange(event: any) {
+    const selectedValue = event.value; // El valor de la categoría seleccionada
+
+    if (selectedValue) {
+      // PrimeNG aplicará este filtro al campo 'category' porque lo especificaste en filterBy
+      this.dv.filter(selectedValue);
+    } else {
+      // Si se selecciona 'Todas las Categorías', limpia el filtro global
+      this.dv.filter('');
+    }
+  }
 
   showSuccess() {
     this.messageService.add({

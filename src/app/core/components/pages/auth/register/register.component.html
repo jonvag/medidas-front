@@ -1,0 +1,63 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+            <div class="w-full surface-card pb-6 pt-4 px-5 sm:px-7" style="border-radius:53px">
+                <div class="text-center">
+                    <img src="assets/demo/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-2">
+                    <div class="text-900 text-xl font-medium mb-2">Registrarse!</div>
+                </div>
+
+                <div>
+                    <label for="email1" class="block text-900 text-md font-medium mb-2">Email</label>
+                    <div class="flex flex-column mb-4 w-full md:w-30rem"> <input id="email1" type="text" placeholder="Dirección email" pInputText [(ngModel)]="user.email" required
+                               class="w-full" style="padding:1rem"
+                               [class.ng-invalid]="formErrors()['email'] && submitted"
+                               [class.ng-dirty]="formErrors()['email'] && submitted">
+                        <small class="p-error w-full md:w-30rem" [style.visibility]="(formErrors()['email'] && submitted) ? 'visible' : 'hidden'" [innerHTML]="formErrors()['email'] || '&nbsp;'"></small>
+                    </div>
+
+                    <label for="name1" class="block text-900 text-md font-medium mb-2">Nombre</label>
+                    <div class="flex flex-column mb-4 w-full md:w-30rem">
+                        <input id="name1" type="text" placeholder="Ingrese su nombre" pInputText [(ngModel)]="user.name" required
+                               class="w-full" style="padding:1rem"
+                               [class.ng-invalid]="formErrors()['name'] && submitted"
+                               [class.ng-dirty]="formErrors()['name'] && submitted">
+                        <small class="p-error w-full md:w-30rem" [style.visibility]="(formErrors()['name'] && submitted) ? 'visible' : 'hidden'" [innerHTML]="formErrors()['name'] || '&nbsp;'"></small>
+                    </div>
+
+                    <label for="lastname1" class="block text-900 text-md font-medium mb-2">Apellido</label>
+                    <div class="flex flex-column mb-4 w-full md:w-30rem">
+                        <input id="lastname1" type="text" placeholder="Ingrese su apellido" pInputText [(ngModel)]="user.lastname" required
+                               class="w-full" style="padding:1rem"
+                               [class.ng-invalid]="formErrors()['lastname'] && submitted"
+                               [class.ng-dirty]="formErrors()['lastname'] && submitted">
+                        <small class="p-error w-full md:w-30rem" [style.visibility]="(formErrors()['lastname'] && submitted) ? 'visible' : 'hidden'" [innerHTML]="formErrors()['lastname'] || '&nbsp;'"></small>
+                    </div>
+
+                    <label for="password1" class="block text-900 font-medium text-md mb-2">Contraseña</label>
+                    <div class="flex flex-column mb-4 w-full md:w-30rem"> <p-password id="password1" [(ngModel)]="user.password1" placeholder="Contraseña" [toggleMask]="true" styleClass="w-full"
+                                    inputStyleClass="w-full p-3"
+                                    [ngClass]="{'ng-invalid': formErrors()['password1'] && submitted, 'ng-dirty': formErrors()['password1'] && submitted}"></p-password>
+                        <small class="p-error w-full md:w-30rem" [style.visibility]="(formErrors()['password1'] && submitted) ? 'visible' : 'hidden'" [innerHTML]="formErrors()['password1'] || '&nbsp;'"></small>
+                    </div>
+
+                    <label for="password2" class="block text-900 font-medium text-md mb-2">Repetir Contraseña</label>
+                    <div class="flex flex-column mb-4 w-full md:w-30rem"> <p-password id="password2" [(ngModel)]="user.password2" placeholder="Repetir Contraseña" [toggleMask]="true" styleClass="w-full"
+                                    inputStyleClass="w-full p-3"
+                                    [ngClass]="{'ng-invalid': formErrors()['password2'] && submitted, 'ng-dirty': formErrors()['password2'] && submitted}"></p-password>
+                        <small class="p-error w-full md:w-30rem" [style.visibility]="(formErrors()['password2'] && submitted) ? 'visible' : 'hidden'" [innerHTML]="formErrors()['password2'] || '&nbsp;'"></small>
+                    </div>
+
+                    <div class="flex align-items-center justify-content-between mb-5 gap-5">
+                        <div class="flex align-items-center">
+                            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" routerLink="/auth/login">Login</a>
+                        </div>
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidó su contraseña?</a>
+                    </div>
+                    <button pButton pRipple label="Registrar" class="w-full p-3 textlg" (click)="saveUser()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast></p-toast>

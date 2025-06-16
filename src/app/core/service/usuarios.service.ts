@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { delay, Observable } from 'rxjs';
+import { delay, Observable, timeout } from 'rxjs';
 import { APP_CONFIG } from '../config/app-config.token';
 import { Client } from '../api/client';
+import { User } from '../api/user';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class UsuariosService {
 
   getClientsById(id_user: number): Observable<any> {
 
-    return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`);
+    return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`).pipe(timeout(2000));
   }
 
   deleteClient(id_client: number): Observable<any> {
@@ -66,6 +67,29 @@ export class UsuariosService {
     }
 
     return this.http.put<Client>(`${this.urlBase}/api/client/${form.client_id}`, form, {
+      headers: headers,
+      responseType: 'json',
+      observe: 'response'
+    });
+  }
+
+  createUser(form: User) {
+    const userSessionName = localStorage.getItem('userSessionName');
+    let headers = new HttpHeaders();
+    if (userSessionName) {
+      headers = headers.set('X-User-Session-Name', userSessionName);
+    }
+
+const register = {
+  name:form.name,
+  lastname:form.lastname,
+  email:form.email,
+  status:true,
+  pass:form.password1
+}
+
+    return this.http.post(`${this.urlBase}/api/usuarios`, register, {
+      ...Option,
       headers: headers,
       responseType: 'json',
       observe: 'response'

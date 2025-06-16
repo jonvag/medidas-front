@@ -1,0 +1,46 @@
+/* Puedes colocar esto en tu archivo de estilos global o en el archivo .scss de tu componente */
+
+.pi-sun-inactive {
+    position: relative; 
+    display: inline-block; 
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%; /* Centra verticalmente */
+        left: 0;
+        width: 100%;
+        height: 2px; /* Grosor de la línea */
+        background-color: currentColor; /* Usa el color actual del icono */
+        transform: translateY(-50%) rotate(-45deg); /* Centra y rota para una línea diagonal */
+        transform-origin: center center;
+    }
+}
+
+.pi-moon-inactive {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        transform: translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+    }
+}
+
+/* Opcional: Estilos para cuando está activo (sin raya) */
+.pi-active {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.pi-inactive {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}

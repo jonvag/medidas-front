@@ -101,8 +101,8 @@
 					<input pInputText type="text"  placeholder="Buscar..."  (input)="onGlobalFilter(dt, $event)"  class="w-full sm:w-auto"/>
 				</span>
 			</div>
-			<p-table #dt [value]="this.clients()" scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll"
-			responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name','age','sexo']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} entradas" selectionMode="multiple" [rowHover]="true" dataKey="id">
+			<p-table #dt [value]="this.clients()" [loading]="loading" scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll"
+			responsiveLayout="scroll" [rows]="5" [globalFilterFields]="['name','age','sexo']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} entradas" selectionMode="multiple" [rowHover]="true" dataKey="id">
 				<ng-template pTemplate="header">
 					<tr>
 						<th pSortableColumn="name" style="width:200px">Nombre <p-sortIcon field="name"></p-sortIcon></th>
