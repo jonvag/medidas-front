@@ -43,12 +43,28 @@ export class RegisterComponent {
     email: "",
     password1: ""
   };
+  ripple: boolean | undefined;
+
+  infoUser = {
+    colorScheme: '',
+    theme: '',
+    ripple: true
+  };
 
   constructor(public router: Router,) { }
 
   ngOnInit(): void {
 
-    this.changeTheme('arya-green', 'dark');
+    const infoUserStr = localStorage.getItem('infoUser');
+
+    if (infoUserStr) {
+      const infoUserActual = JSON.parse(infoUserStr);
+      this.ripple = infoUserActual.ripple;
+      this.changeTheme(infoUserActual.theme, infoUserActual.colorScheme);
+
+    } else {
+      console.log('No se encontraron los datos del usuario.');
+    }
 
   }
 
