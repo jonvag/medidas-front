@@ -1,7 +1,6 @@
 <div class="layout-topbar">
     <a class="layout-topbar-logo" routerLink="">
-        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg"
-            alt="logo">
+        <img src="assets/{{layoutService.config.colorScheme === 'light' ? 'aguacate' : 'aguacate3'}}.png" alt="logo">
         <span>Medidas</span>
     </a>
 
@@ -28,11 +27,19 @@
             <i class="pi pi-cog"></i>
             <span>Settings</span>
         </button> -->
+        <div class="mt-2">
+            <i class="pi pi-sun mx-2"
+                [ngClass]="{ 'pi-sun-inactive': ripple, 'pi-active': !ripple, 'pi-inactive': ripple }"
+                style="font-size: 1.3rem; margin-left: 10px; cursor: pointer;" (click)="onRippleChange()"> </i>
+            <p-inputSwitch [(ngModel)]="ripple" (ngModelChange)="onRippleChange()"></p-inputSwitch>
+            <i class="pi pi-moon"
+                [ngClass]="{ 'pi-moon-inactive': !ripple, 'pi-active': ripple, 'pi-inactive': !ripple }"
+                style="font-size: 1.3rem; margin-left: 10px; cursor: pointer;"> </i>
+        </div>
 
-        <i class="pi pi-sun mx-2" [ngClass]="{ 'pi-sun-inactive': ripple, 'pi-active': !ripple, 'pi-inactive': ripple }"
-            style="font-size: 1.5rem; margin-left: 10px; cursor: pointer;" (click)="onRippleChange()"> </i>
-        <p-inputSwitch [(ngModel)]="ripple" (ngModelChange)="onRippleChange()"></p-inputSwitch>
-        <i class="pi pi-moon" [ngClass]="{ 'pi-moon-inactive': !ripple, 'pi-active': ripple, 'pi-inactive': !ripple }"
-            style="font-size: 1.5rem; margin-left: 10px; cursor: pointer;"> </i>
+        <div class="flex cursor-pointer mt-3" (click)="salir()">
+            <i class="pi pi-sign-out ml-3 mb-1 mr-3" style="font-size: 1.2rem; margin-left: 10px;"> </i>
+            <p class="block lg:hidden">Salir</p>
+        </div>
     </div>
 </div>

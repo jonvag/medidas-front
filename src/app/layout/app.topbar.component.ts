@@ -1,8 +1,8 @@
-import { Component, ElementRef, signal, ViewChild } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
+import { MenuItem, MessageService } from 'primeng/api';
 import { LayoutService } from "./service/app.layout.service";
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
 
@@ -12,10 +12,12 @@ import { FormsModule } from '@angular/forms';
     imports: [CommonModule, RouterLink, InputSwitchModule, FormsModule],
     templateUrl: './app.topbar.component.html',
     styleUrl: './topbar.css',
+    providers: [MessageService]
 })
 export class AppTopBarComponent {
 
     items!: MenuItem[];
+    private messageService = inject(MessageService);
 
     @ViewChild('menubutton') menuButton!: ElementRef;
 
@@ -30,7 +32,7 @@ export class AppTopBarComponent {
         theme: '',
         ripple: true
     };
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService, public router: Router) { }
 
     ngOnInit(): void {
 
@@ -98,5 +100,10 @@ export class AppTopBarComponent {
         }
 
         localStorage.setItem('infoUser', JSON.stringify(this.infoUser));
+    }
+
+    salir() {
+        localStorage.removeItem('loginUser');
+        this.router.navigateByUrl('/auth/login');
     }
 } 

@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { delay, Observable, timeout } from 'rxjs';
 import { APP_CONFIG } from '../config/app-config.token';
 import { Client } from '../api/client';
-import { User } from '../api/user';
+import { User, UserLogin } from '../api/user';
 
 @Injectable({
   providedIn: 'root'
@@ -18,17 +18,17 @@ export class UsuariosService {
   constructor() { }
 
   getUsers(): Observable<any> {
-    
+
     return this.http.get(`${this.urlBase}/api/usuarios`);
   }
 
 
   getClient(): Observable<any> {
-    
+
     return this.http.get(`${this.urlBase}/api/client`);
   }
 
-  getClientsById(id_user: number): Observable<any> {
+  getClientsById(id_user: string): Observable<any> {
 
     return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`).pipe(timeout(2000));
   }
@@ -74,23 +74,32 @@ export class UsuariosService {
   }
 
   createUser(form: User) {
-    const userSessionName = localStorage.getItem('userSessionName');
-    let headers = new HttpHeaders();
-    if (userSessionName) {
-      headers = headers.set('X-User-Session-Name', userSessionName);
+
+    const register = {
+      name: form.name,
+      lastname: form.lastname,
+      email: form.email,
+      status: true,
+      pass: form.password1
     }
+    console.log("for de crear ", register);
 
-const register = {
-  name:form.name,
-  lastname:form.lastname,
-  email:form.email,
-  status:true,
-  pass:form.password1
-}
-
-    return this.http.post(`${this.urlBase}/api/usuarios`, register, {
+    return this.http.post(`${this.urlBase}/auth/register`, register, {
       ...Option,
-      headers: headers,
+      responseType: 'json',
+      observe: 'response'
+    });
+  }
+
+  loginUser(form:UserLogin){
+
+    const user = {
+      email: form.email,
+      pass: form.password1
+    };
+
+    return this.http.post(`${this.urlBase}/auth/login`, user, {
+      ...Option,
       responseType: 'json',
       observe: 'response'
     });

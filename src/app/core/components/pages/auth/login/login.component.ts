@@ -5,9 +5,9 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UserLogin } from '../../../../api/user';
+import { User, UserLogin } from '../../../../api/user';
 import { UsuariosService } from '../../../../service/usuarios.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -50,7 +50,7 @@ export class LoginComponent {
     ripple: true
   };
 
-  constructor() { }
+  constructor(public router: Router,) { }
 
   ngOnInit(): void {
 
@@ -101,35 +101,47 @@ export class LoginComponent {
 
     /* aqui mandar a ingresar */
 
-    /* this.usuariosService.loginUser(form).subscribe({
+    this.usuariosService.loginUser(form).subscribe({
       next: (response) => {
         if (response.status === 200) {
           this.resetForm();
+          const userLoggeado = response.body as User;
+
+          if (response.body) {
+            const loginUser = {
+            id: userLoggeado.id,
+            name: userLoggeado.name || 'Valor por defecto',
+            lastname: userLoggeado.lastname,
+            email:userLoggeado.email,
+            token: userLoggeado.token,
+            ripple: false
+          };
+
+          localStorage.setItem('loginUser', JSON.stringify(loginUser));
+          }
+
+          
           this.messageService.add({
             severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
             summary: 'Éxito',
-            detail: 'Usuario  creado correctamente!.'
+            detail: 'Bienvenido!.'
           });
-          setTimeout(() => {
-
-            this.router.navigateByUrl('/auth/login');
-          }, 1300);
+          this.router.navigateByUrl('/dashboard');
 
         } else if (response.status === 201) {
 
           this.messageService.add({
             severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
             summary: 'Error',
-            detail: 'Correo ya existe en la BD'
+            detail: 'Usuario o contraseña incorrectos.'
           });
 
-
-        } else if (response.status === 400) {
+        } else {
 
           this.messageService.add({
             severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
             summary: 'Error',
-            detail: 'Ocurrio un  error al crear el usuario'
+            detail: 'Ocurrio un  error al validar el usuario'
           });
 
         }
@@ -139,13 +151,12 @@ export class LoginComponent {
         this.messageService.add({
           severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
           summary: 'Error',
-          detail: 'Ocurrió un error al momento de crear un usuario'
+          detail: 'Ocurrió un error al momento de validar el usuario'
         });
 
-        console.error('Error al crear usuario:', error);
-        this.formErrors.update(errors => ({ ...errors, apiError: 'Error al guardar el usuario. Inténtalo de nuevo.' }));
+        this.formErrors.update(errors => ({ ...errors, apiError: 'Error al ingresar el usuario. Inténtalo de nuevo.' }));
       }
-    }); */
+    });
 
     this.submitted = false;
   }
@@ -177,6 +188,14 @@ export class LoginComponent {
       cloneLinkElement.setAttribute('id', id);
       onComplete();
     });
+  }
+
+  resetForm() {
+    this.user = {
+      email: "",
+      password1: ""
+    };
+    this.formErrors.set({});
   }
 
 }

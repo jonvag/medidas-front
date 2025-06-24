@@ -163,7 +163,8 @@ export class RegisterComponent {
 
     this.usuariosService.createUser(form).subscribe({
       next: (response) => {
-        if (response.status === 200) {
+
+        if (response.status === 201) {
           this.resetForm();
           this.messageService.add({
             severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
@@ -175,7 +176,7 @@ export class RegisterComponent {
             this.router.navigateByUrl('/auth/login');
           }, 1300);
 
-        } else if (response.status === 201) {
+        } else if (response.status === 200) {
 
           this.messageService.add({
             severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
@@ -184,7 +185,7 @@ export class RegisterComponent {
           });
 
 
-        } else if (response.status === 400) {
+        } else {
 
           this.messageService.add({
             severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
@@ -196,6 +197,7 @@ export class RegisterComponent {
 
       },
       error: (error) => {
+        
         this.messageService.add({
           severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
           summary: 'Error',

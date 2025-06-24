@@ -1,0 +1,29 @@
+.hero1 {
+    height: 300px;
+    width: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bordeado {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.box-planes {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 350px;
+}
+
+.footer{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}

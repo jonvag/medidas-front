@@ -27,6 +27,7 @@ import { Client } from '../../api/client';
 import { UsuariosService } from '../../service/usuarios.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { User, UserLogin } from '../../api/user';
 
 interface expandedRows {
   [key: string]: boolean;
@@ -109,7 +110,7 @@ export class TableImcComponent {
   products: Product[] = [];
 
   client: Client = {
-    id: 0,
+    id: '0',
     name: "",
     email: "",
     sexo: "",
@@ -130,6 +131,12 @@ export class TableImcComponent {
   idFrozen: boolean = false;
 
   loading: boolean = true;
+  userLoggeado:User={
+    name: "",
+    lastname: "",
+    email: "",
+    password1: ""
+  };
   dialogHeader: string = "Agregar Cliente";
   indicAgregarOrUpdate: boolean = true;
 
@@ -143,7 +150,7 @@ export class TableImcComponent {
 
   ngOnInit() {
 
-// 1. Obtener el tema inicial al cargar el componente
+    // 1. Obtener el tema inicial al cargar el componente
     this.currentTheme = this.layoutService.config.theme;
     this.currentColorScheme = this.layoutService.config.colorScheme;
     console.log(`[NuevoComponente] Tema inicial: ${this.currentTheme}, Esquema de color inicial: ${this.currentColorScheme}`);
@@ -165,23 +172,29 @@ export class TableImcComponent {
   }
 
   cargaInicial(): void {
-    this.usuariosService.getClientsById(2).subscribe(((clientsService: any) => {
-      if (clientsService.error) {
+    const infoUser = localStorage.getItem("loginUser");
+    if (infoUser) {
+      this.userLoggeado = JSON.parse(infoUser) as User;
+      
+      this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe(((clientsService: any) => {
+        if (clientsService.error) {
 
-        console.log("No se actualizo la clientsService, debe solicitar otro token ");
-        console.log("clientsService ", clientsService);
-      }
+          console.log("No se actualizo la clientsService, debe solicitar otro token ");
+          console.log("clientsService ", clientsService);
+        }
 
-      clientsService.forEach((person: Client) => {
-        person.imc = this.functionIMC(person.name, person.peso, person.estatura);
-        person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
-      });
+        clientsService.forEach((person: Client) => {
+          person.imc = this.functionIMC(person.name, person.peso, person.estatura);
+          person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
+        });
 
-      this.loading = false;
+        this.loading = false;
 
-      this.clients.set(clientsService);
+        this.clients.set(clientsService);
 
-    }));
+      }));
+    }
+
   }
 
   openNew(user: Client | number) {
@@ -204,7 +217,7 @@ export class TableImcComponent {
         estatura: user.estatura || 0,
         circunferencia: user.circunferencia || '',
         address: user.address || '',
-        user_id: user.user_id || 0,
+        user_id: this.userLoggeado.id,
         status: user.status || 'active'
       };
       // Puedes asignar otros campos si no están en tu interfaz Client, pero son parte del objeto 'user'
@@ -250,7 +263,7 @@ export class TableImcComponent {
     let form: Client = {
       name: this.client.name,
       client_id: this.client.id,
-      user_id: 2,
+      user_id: this.userLoggeado.id,
       email: this.client.email,
       sexo: this.client.sexo,
       age: this.client.age,
@@ -483,7 +496,7 @@ export class TableImcComponent {
 
   resetForm() {
     this.client = {
-      id: 0,
+      id: '0',
       name: "",
       email: "",
       sexo: "",
