@@ -1,0 +1,12 @@
+@if (this.pesosClient().length > 0) {
+    <div class="grid p-fluid">
+        <div class="col-12 lg:col-6">
+            <div class="card">
+                <h5>Pesos</h5>
+                <p-chart type="line" [data]="lineData" [options]="lineOptions"></p-chart>
+            </div>
+        </div>
+    </div>
+}@else {
+    <p>No posee pesos asociados</p>
+}

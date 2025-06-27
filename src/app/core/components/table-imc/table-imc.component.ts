@@ -90,7 +90,7 @@ export class TableImcComponent {
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
 
-  private router = inject(Router); // <-- ¡Inyecta Router aquí!
+  public router = inject(Router); // <-- ¡Inyecta Router aquí!
 
   clients = signal<any>("");
   formErrors = signal<any>("");
@@ -146,7 +146,7 @@ export class TableImcComponent {
 
   @ViewChild('filter') filter!: ElementRef;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,) { }
 
   ngOnInit() {
 
@@ -284,12 +284,12 @@ export class TableImcComponent {
             this.resetForm();
             this.hideDialog();
             this.cargaInicial();
-            this.messageService.add({
+            this.messageService.add({ 
               severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
               summary: 'Éxito',
               detail: 'Operación completada correctamente.'
             });
-          } else if (response.status === 201) {
+          } else if (response.status === 202) {
 
             this.messageService.add({
               severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'

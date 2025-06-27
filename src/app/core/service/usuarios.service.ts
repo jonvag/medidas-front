@@ -34,11 +34,9 @@ export class UsuariosService {
   }
 
   deleteClient(id_client: number): Observable<any> {
-    console.log("api eliminar cliente ", id_client)
     return this.http.delete(`${this.urlBase}/api/client/${id_client}`);
   }
 
-  //ejemplo apis con header
 
   postClientById(form: Client) {
     const userSessionName = localStorage.getItem('userSessionName');
@@ -46,8 +44,6 @@ export class UsuariosService {
     if (userSessionName) {
       headers = headers.set('X-User-Session-Name', userSessionName);
     }
-
-    console.log("for de crear ", form)
 
     return this.http.post(`${this.urlBase}/api/client`, form, {
       ...Option,
@@ -57,7 +53,7 @@ export class UsuariosService {
     });
   }
 
-  updateClient(form: Client) { // <-- Tipo de retorno y parámetro
+  updateClient(form: Client) {
 
     const userSessionName = localStorage.getItem('userSessionName');
     let headers = new HttpHeaders();
@@ -82,7 +78,6 @@ export class UsuariosService {
       status: true,
       pass: form.password1
     }
-    console.log("for de crear ", register);
 
     return this.http.post(`${this.urlBase}/auth/register`, register, {
       ...Option,
@@ -91,7 +86,7 @@ export class UsuariosService {
     });
   }
 
-  loginUser(form:UserLogin){
+  loginUser(form: UserLogin) {
 
     const user = {
       email: form.email,
@@ -103,6 +98,16 @@ export class UsuariosService {
       responseType: 'json',
       observe: 'response'
     });
+  }
+
+  getClientInfoById(idClient: string): Observable<any> {
+
+    return this.http.get(`${this.urlBase}/api/client/client-info/${idClient}`);
+  }
+
+  getPesoClientById(idClient: string): Observable<any> {
+
+    return this.http.get(`${this.urlBase}/api/client/client-peso/${idClient}`);
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="col-12">
-	<div class="card">
-        <p>{{productId}} </p>
-
+    <h4> <span class="mr-4 cursor-pointer" (click)="goToIMC()"><i class="pi pi-arrow-left text-gray-400 hover:text-gray-100"></i></span> {{this.infoClient().name}}</h4>
+    <div class="card">
+        <app-pesos [clientIdHijo]="clientId"></app-pesos>
     </div>
 </div>

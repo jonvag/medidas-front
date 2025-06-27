@@ -17,3 +17,12 @@ export interface Client {
     status?: string;
     activity?: number;
 }
+
+export interface PesoClient {
+    id:number;
+    client_id:string;
+    peso:string;
+    updatedAt?:string;
+    createdAt?:string;
+    
+}
