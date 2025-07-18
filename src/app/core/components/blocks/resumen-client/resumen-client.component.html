@@ -1,0 +1,90 @@
+<div class="col-12">
+    <div class="grid p-fluid">
+        <div class="col-2 lg:col-1">
+            <div class="mi-border">
+                <h5 class="text-sm block">Fecha</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Peso</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Estatura</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Cintura</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+        </div>
+
+        @for(item of pesosClient(); track item.id) {
+        <div class="col-2 lg:col-1 hover:bg-purple-900 hover:dark:bg-gray-300">
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">{{item.createdAt | date}}</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">{{item.peso}} </h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block"> {{item.estatura}} </h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">{{item.cintura}} </h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+
+            <div class="mi-border hover:bg-purple-700">
+                <h5 class="text-sm block">Medidas</h5>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>

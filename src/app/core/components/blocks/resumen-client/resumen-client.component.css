@@ -1,0 +1,10 @@
+.mi-border{
+    border: solid purple 1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}

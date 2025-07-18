@@ -22,6 +22,8 @@ export interface PesoClient {
     id:number;
     client_id:string;
     peso:string;
+    estatura:string;
+    cintura:string;
     updatedAt?:string;
     createdAt?:string;
     

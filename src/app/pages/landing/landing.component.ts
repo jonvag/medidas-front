@@ -1,3 +1,4 @@
+// ...existing code...
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,6 +17,13 @@ import { LayoutService } from '../../layout/service/app.layout.service';
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
+
+  scrollToFragment(fragment: string) {
+    const el = document.getElementById(fragment);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   public layoutService = inject(LayoutService);
   ripple: boolean | undefined;

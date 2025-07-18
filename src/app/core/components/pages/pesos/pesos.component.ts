@@ -20,6 +20,8 @@ export class PesosComponent {
   pesosClient = signal<PesoClient[]>([]);
   fechas = signal<string[]>([]);
   pesoPorFecha = signal<number[]>([]);
+  estaturaPorFecha = signal<number[]>([]);
+  cinturaPorFecha = signal<number[]>([]);
   lineData: any;
   lineOptions: any;
 
@@ -37,9 +39,10 @@ export class PesosComponent {
       }
 
       this.pesosClient.set(pesosClient);
-      console.log(this.pesosClient().length);
       this.cargarFechas();
       this.cargarPesos();
+      this.cargarCintura();
+      this.cargarEstatura();
       this.initCharts();
 
     }));
@@ -58,16 +61,24 @@ export class PesosComponent {
           label: 'Peso (Kg)',
           data: this.pesoPorFecha(),
           fill: false,
-          backgroundColor: documentStyle.getPropertyValue('--primary-500'),
-          borderColor: documentStyle.getPropertyValue('--primary-500'),
+          backgroundColor: documentStyle.getPropertyValue('--primary-400'),
+          borderColor: documentStyle.getPropertyValue('--primary-400'),
           tension: .4
         },
         {
-          label: 'Fecha',
-          data: [0],
+          label: 'Estatura (mts)',
+          data: this.estaturaPorFecha(),
           fill: false,
           backgroundColor: documentStyle.getPropertyValue('--primary-200'),
           borderColor: documentStyle.getPropertyValue('--primary-200'),
+          tension: .4
+        },
+        {
+          label: 'Cintura (cm)',
+          data: this.cinturaPorFecha(),
+          fill: false,
+          backgroundColor: documentStyle.getPropertyValue('--primary-700'),
+          borderColor: documentStyle.getPropertyValue('--primary-700'),
           tension: .4
         }
       ]
@@ -120,6 +131,22 @@ export class PesosComponent {
     });
 
     this.pesoPorFecha.set(pesos);
+  }
+
+  cargarEstatura() {
+    const estatura = this.pesosClient().map(item => {
+      return parseFloat(item.estatura);
+    });
+
+    this.estaturaPorFecha.set(estatura);
+  }
+
+  cargarCintura() {
+    const cintura = this.pesosClient().map(item => {
+      return parseFloat(item.cintura);
+    });
+
+    this.cinturaPorFecha.set(cintura);
   }
 
 }

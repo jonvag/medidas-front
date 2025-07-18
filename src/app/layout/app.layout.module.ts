@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { authGuard } from '../core/guards/auth.guard';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';

@@ -10,11 +10,14 @@ import { LayoutService } from '../../../../layout/service/app.layout.service';
   styleUrl: './mypage.component.css'
 })
 export class MypageComponent {
-  private layoutService= inject(LayoutService);
+  private layoutService = inject(LayoutService);
+  userName: string = '';
 
   ngOnInit(): void {
-    
-    
+    const loginUserStr = localStorage.getItem('loginUser');
+    if (loginUserStr) {
+      const loginUser = JSON.parse(loginUserStr);
+      this.userName = loginUser.name || '';
+    }
   }
-
 }

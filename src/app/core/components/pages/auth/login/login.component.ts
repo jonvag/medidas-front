@@ -118,6 +118,9 @@ export class LoginComponent {
           };
 
           localStorage.setItem('loginUser', JSON.stringify(loginUser));
+          if (userLoggeado.token) {
+            localStorage.setItem('token', userLoggeado.token);
+          }
           }
 
           

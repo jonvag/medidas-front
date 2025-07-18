@@ -104,6 +104,7 @@ export class AppTopBarComponent {
 
     salir() {
         localStorage.removeItem('loginUser');
+        localStorage.removeItem('token');
         this.router.navigateByUrl('/auth/login');
     }
 } 

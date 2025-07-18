@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { User } from '../../../api/user';
 import { PesosComponent } from "../pesos/pesos.component";
+import { ResumenClientComponent } from '../../blocks/resumen-client/resumen-client.component';
 
 @Component({
   selector: 'app-detail-client',
   standalone: true,
-  imports: [CommonModule, PesosComponent],
+  imports: [CommonModule, PesosComponent,  ResumenClientComponent],
   templateUrl: './detail-client.component.html',
   styleUrl: './detail-client.component.css'
 })
