@@ -1,6 +1,8 @@
 <div class="col-12">
+    @if (cargandoWeigh()) {
+    @if (pesosClient().length > 0 ) {
     <div class="grid p-fluid">
-        <div class="col-2 lg:col-1">
+        <div class="col-3 md:col-2">
             <div class="mi-border">
                 <h5 class="text-sm block">Fecha</h5>
             </div>
@@ -18,32 +20,32 @@
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Muñeca</h5>
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Brazo</h5>
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Abdominal</h5>
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Cadera</h5>
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Triceps</h5>
             </div>
 
             <div class="mi-border">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">Subescapular</h5>
             </div>
         </div>
 
         @for(item of pesosClient(); track item.id) {
-        <div class="col-2 lg:col-1 hover:bg-purple-900 hover:dark:bg-gray-300">
+        <div class="col-3 md:col-2">
             <div class="mi-border hover:bg-purple-700">
                 <h5 class="text-sm block">{{item.createdAt | date}}</h5>
             </div>
@@ -61,30 +63,87 @@
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.muneca}} </h5>
+
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.brazo}} </h5>
+
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.abdominal}} </h5>
+
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.cadera}} </h5>
+
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.triceps}} </h5>
+
             </div>
 
             <div class="mi-border hover:bg-purple-700">
-                <h5 class="text-sm block">Medidas</h5>
+                <h5 class="text-sm block">{{item.subescapular}} </h5>
+
             </div>
         </div>
         }
+        @if ((pesosClient().length > 5 && pesosClient().length < 10) || (pesosClient().length > 11 && pesosClient().length < 15)) { <div class="col-3 md:col-2">
+            <div class="mi-border">
+                <h5 class="text-sm block">Fecha</h5>
+            </div>
 
+            <div class="mi-border">
+                <h5 class="text-sm block">Peso</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Estatura</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Cintura</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Muñeca</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Brazo</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Abdominal</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Cadera</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Triceps</h5>
+            </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">Subescapular</h5>
+            </div>
     </div>
+    }
+</div>
+}@else {
+no posee medidaas este cliente
+}
+}@else {
+<p>Cargando...</p>
+}
+
+
+
+
 </div>

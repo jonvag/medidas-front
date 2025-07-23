@@ -20,6 +20,7 @@ export class ResumenClientComponent {
   pesoPorFecha = signal<number[]>([]);
   estaturaPorFecha = signal<number[]>([]);
   cinturaPorFecha = signal<number[]>([]);
+  cargandoWeigh = signal<boolean>(false);
 
   constructor() { }
 
@@ -42,6 +43,8 @@ export class ResumenClientComponent {
       this.cargarPesos();
       this.cargarCintura();
       this.cargarEstatura();
+
+      this.cargandoWeigh.set(true);
 
     }));
   }

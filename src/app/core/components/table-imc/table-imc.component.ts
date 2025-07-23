@@ -117,7 +117,13 @@ export class TableImcComponent {
     age: 0,
     peso: 0,
     estatura: 0,
-    circunferencia: "0"
+    circunferencia: "0",
+    muneca: "0",
+    brazo: "0",
+    abdominal: "0",
+    cadera: "0",
+    triceps: "0",
+    subescapular: "0"
   };
 
   rowGroupMetadata: any;
@@ -131,7 +137,7 @@ export class TableImcComponent {
   idFrozen: boolean = false;
 
   loading: boolean = true;
-  userLoggeado:User={
+  userLoggeado: User = {
     name: "",
     lastname: "",
     email: "",
@@ -175,7 +181,7 @@ export class TableImcComponent {
     const infoUser = localStorage.getItem("loginUser");
     if (infoUser) {
       this.userLoggeado = JSON.parse(infoUser) as User;
-      
+
       this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe(((clientsService: any) => {
         if (clientsService.error) {
 
@@ -210,17 +216,22 @@ export class TableImcComponent {
       this.client = {
         id: user.id,
         name: user.name,
-        email: user.email || '', // Asegura un valor por defecto si es undefined/null
+        email: user.email || '',
         sexo: user.sexo || '',
         age: user.age || 0,
         peso: user.peso || 0,
         estatura: user.estatura || 0,
         circunferencia: user.circunferencia || '',
+        muneca: user.muneca || '',
+        brazo: user.brazo || '',
+        abdominal: user.abdominal || '',
+        cadera: user.cadera || '',
+        triceps: user.triceps || '',
+        subescapular: user.subescapular || '',
         address: user.address || '',
         user_id: this.userLoggeado.id,
         status: user.status || 'active'
       };
-      // Puedes asignar otros campos si no están en tu interfaz Client, pero son parte del objeto 'user'
     } else {
       // Caso 4: Tipo de dato inesperado
       console.warn("openNew recibió un tipo de dato inesperado:", user);
@@ -270,6 +281,12 @@ export class TableImcComponent {
       peso: this.client.peso,
       estatura: this.client.estatura,
       circunferencia: this.client.circunferencia,
+      muneca: this.client.muneca || '',
+      brazo: this.client.brazo || '',
+      abdominal: this.client.abdominal || '',
+      cadera: this.client.cadera || '',
+      triceps: this.client.triceps || '',
+      subescapular: this.client.subescapular || '',
       status: this.client.status,
       address: this.client.address
     };
@@ -284,7 +301,7 @@ export class TableImcComponent {
             this.resetForm();
             this.hideDialog();
             this.cargaInicial();
-            this.messageService.add({ 
+            this.messageService.add({
               severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
               summary: 'Éxito',
               detail: 'Operación completada correctamente.'

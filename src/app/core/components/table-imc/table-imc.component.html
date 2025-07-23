@@ -63,6 +63,42 @@
 								[minFractionDigits]="2" [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
 					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="muneca">Muñeca</label>
+							<p-inputNumber id="muneca" [(ngModel)]="client.muneca" [minFractionDigits]="2"
+								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+						<div class="field col">
+							<label for="brazo">Brazo</label>
+							<p-inputNumber id="brazo" [(ngModel)]="client.brazo"
+								[minFractionDigits]="2" [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="abdominal">Abdominal</label>
+							<p-inputNumber id="abdominal" [(ngModel)]="client.abdominal" [minFractionDigits]="2"
+								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+						<div class="field col">
+							<label for="cadera">Cadera</label>
+							<p-inputNumber id="cadera" [(ngModel)]="client.cadera"
+								[minFractionDigits]="2" [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="triceps">Triceps</label>
+							<p-inputNumber id="triceps" [(ngModel)]="client.triceps" [minFractionDigits]="2"
+								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+						<div class="field col">
+							<label for="subescapular">Subescapular</label>
+							<p-inputNumber id="subescapular" [(ngModel)]="client.subescapular"
+								[minFractionDigits]="2" [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+						</div>
+					</div>
 					<div class="field">
 						<label for="address">Dirección corta</label>
 						<input type="address" pInputText id="address" [(ngModel)]="client.address" required autofocus
@@ -115,7 +151,6 @@
 		<section>
 			<h5>Datos paciente</h5>
 			<div class="flex gap-3">
-
 				<span class="p-buttonset">
 					<button pButton pRipple label="Nuevo" icon="pi pi-plus" class="mr-2" (click)="openNew(0)"></button>
 				</span>

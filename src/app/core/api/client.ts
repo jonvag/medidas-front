@@ -9,6 +9,12 @@ export interface Client {
     peso: number;
     estatura: number;
     circunferencia?:string;
+    muneca?:string;
+    brazo?:string;
+    abdominal?:string;
+    cadera?:string;
+    triceps?:string;
+    subescapular?:string;
     imc?: number;
     tipo?: string;
     address?: string;
@@ -24,6 +30,12 @@ export interface PesoClient {
     peso:string;
     estatura:string;
     cintura:string;
+    muneca:string;
+    brazo:string;
+    abdominal:string;
+    cadera:string;
+    triceps:string;
+    subescapular:string;
     updatedAt?:string;
     createdAt?:string;
     

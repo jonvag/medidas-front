@@ -78,7 +78,7 @@ export class PorcionAlimentosComponent {
     this.alimentosService.getAlimentos().subscribe(((alimentos: any) => {
 
       this.alimentos = alimentos.data;
-      console.log("alimentos ", this.alimentos);
+      //console.log("alimentos ", this.alimentos);
     }));
   }
 
