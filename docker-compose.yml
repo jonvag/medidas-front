@@ -3,8 +3,8 @@ services:
   # Servicio de frontend (Angular)
   frontend:
     build:
-      context: ./front-medidas  # Ruta a la carpeta de tu proyecto Angular
+      context: ./medidas-front  # Ruta a la carpeta de tu proyecto Angular
       dockerfile: Dockerfile
-    container_name: front-medidas
+    container_name: medidas-front
     ports:
     - "8081:80"  # Mapea el puerto 8081 del host al puerto 80 del contenedor
