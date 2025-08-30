@@ -22,6 +22,7 @@ import { AppConfig, LayoutService } from '../../../layout/service/app.layout.ser
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TooltipModule } from 'primeng/tooltip';
 
 import { Client } from '../../api/client';
 import { UsuariosService } from '../../service/usuarios.service';
@@ -45,13 +46,6 @@ interface ImcCategoryValues {
   sobrepesoII: number;
 }
 
-/**
- * Define la estructura principal para los datos de IMC,
- * donde las claves son rangos de edad (cadenas de texto como '17-24')
- * y los valores son objetos que contienen los umbrales de las categorías de IMC.
- *
- * Utiliza un "índice de firma" para permitir claves de cadena dinámicas.
- */
 interface ImcDataByAgeRange {
   [ageRange: string]: ImcCategoryValues;
 }
@@ -76,12 +70,30 @@ interface ImcDataByAgeRange {
     ToastModule,
     InputNumberModule,
     RadioButtonModule,
-    ConfirmDialogModule],
+    ConfirmDialogModule,
+    TooltipModule],
   templateUrl: './table-imc.component.html',
   styleUrl: './table-imc.component.css',
   providers: [ConfirmationService, MessageService]
 })
 export class TableImcComponent {
+  motivoOptions = [
+    { label: 'Recomendado', value: 'Recomendado' },
+    { label: 'Fijo', value: 'Fijo' },
+    { label: 'Consulta', value: 'Consulta' },
+    { label: 'Redes', value: 'Redes' },
+    { label: 'Gym', value: 'Gym' }
+  ];
+  selectedMotivo: string | null = null;
+  mensajeToolTip:string = "formula usada para calcular el IMC";
+
+  filterMotivo(table: Table) {
+    if (this.selectedMotivo) {
+      table.filter(this.selectedMotivo, 'status', 'equals');
+    } else {
+      table.filter('', 'status', 'equals');
+    }
+  }
 
   private usuariosService = inject(UsuariosService);
 
@@ -171,10 +183,7 @@ export class TableImcComponent {
       // Por ejemplo, ajustar estilos internos o lógica de UI.
     });
 
-
     this.cargaInicial();
-
-
   }
 
   cargaInicial(): void {

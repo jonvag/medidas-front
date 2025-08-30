@@ -42,6 +42,10 @@
             <div class="mi-border">
                 <h5 class="text-sm block">Subescapular</h5>
             </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">%GCT</h5>
+            </div>
         </div>
 
         @for(item of pesosClient(); track item.id) {
@@ -91,50 +95,71 @@
                 <h5 class="text-sm block">{{item.subescapular}} </h5>
 
             </div>
+
+            <div class="mi-border">
+                <h5 class="text-sm block">{{ item.gct}}</h5>
+            </div>
         </div>
         }
-        @if ((pesosClient().length > 5 && pesosClient().length < 10) || (pesosClient().length > 11 && pesosClient().length < 15)) { <div class="col-3 md:col-2">
-            <div class="mi-border">
-                <h5 class="text-sm block">Fecha</h5>
-            </div>
+        @if ((pesosClient().length > 5 && pesosClient().length < 10) || (pesosClient().length> 11 &&
+            pesosClient().length < 15)) { <div class="col-3 md:col-2">
+                <div class="mi-border">
+                    <h5 class="text-sm block">Fecha</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Peso</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Peso</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Estatura</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Estatura</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Cintura</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Cintura</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Muñeca</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Muñeca</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Brazo</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Brazo</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Abdominal</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Abdominal</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Cadera</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Cadera</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Triceps</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Triceps</h5>
+                </div>
 
-            <div class="mi-border">
-                <h5 class="text-sm block">Subescapular</h5>
-            </div>
+                <div class="mi-border">
+                    <h5 class="text-sm block">Subescapular</h5>
+                </div>
+
+                <div class="mi-border">
+                    <h5 class="text-sm block">%GCT</h5>
+                </div>
     </div>
     }
+</div>
+<div class="card">
+    <p class="">Hombres</p>
+    <div class="formula-text">
+        <span class="font-bold">%GCT</span> = (0.567 x <span class="font-bold">perimetro de cintura cm)</span> + (0.101
+        x <span class="font-bold">Edad</span>) - 31.8
+    </div>
+    <p class="mt-5">Mujeres</p>
+    <div class="formula-text mt-2">
+        <span class="font-bold">%GCT</span> = (0.439 x <span class="font-bold">perimetro de cintura cm)</span> + (0.221
+        x <span class="font-bold">Edad</span>) - 9.4
+    </div>
 </div>
 }@else {
 no posee medidaas este cliente
@@ -142,8 +167,4 @@ no posee medidaas este cliente
 }@else {
 <p>Cargando...</p>
 }
-
-
-
-
 </div>

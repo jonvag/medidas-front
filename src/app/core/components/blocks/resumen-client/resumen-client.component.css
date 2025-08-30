@@ -1,4 +1,4 @@
-.mi-border{
+.mi-border {
     border: solid purple 1px;
     border-radius: 10px;
     display: flex;
@@ -7,4 +7,24 @@
     height: 30px;
     padding-top: 10px;
     margin-bottom: 15px;
+}
+
+.custom-card {
+    background-color: #f5f5f5;
+    /* Color claro para el card */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+.formula-text {
+    font-family: 'Courier New', Courier, monospace;
+    /* Cambia la tipografía de la fórmula */
+    font-size: 1.1rem;
+    /* font-weight: 600; */
+    /* color: #007ad9; */
+    /* Color azul para fórmula */
+    margin-top: 10px;
 }

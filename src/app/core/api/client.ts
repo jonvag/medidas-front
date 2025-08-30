@@ -36,6 +36,7 @@ export interface PesoClient {
     cadera:string;
     triceps:string;
     subescapular:string;
+    gct?:number;
     updatedAt?:string;
     createdAt?:string;
     

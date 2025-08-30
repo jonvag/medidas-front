@@ -1,0 +1,37 @@
+<p class="text-2xl">
+    Armar alimento con IA
+</p>
+
+<div class="">
+    <div>
+        <h5>Consultar alimento</h5>
+        <div class="formgroup-inline p-fluid p-formgrid grid">
+            <div class="field col-12 md:col-3">
+                <label htmlFor="tipo" class="p-sr-only">Tipo</label>
+                <p-dropdown [options]="dropdownItems" optionLabel="tipo" optionValue="code" [(ngModel)]="selectedTipo"
+                    placeholder="Seleccionar..."></p-dropdown>
+                <small class="p-error" *ngIf="submitted && formErrors()['tipo']">{{ formErrors()['tipo']}}</small>
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="porciones" class="p-sr-only">Porciones</label>
+                <input pInputText id="porciones" [(ngModel)]="clientComida.porciones" type="text"
+                    placeholder="Introduzca las porciones" autocomplete="off" />
+                <small class="p-error" *ngIf="submitted && formErrors()['porciones']">{{
+                    formErrors()['porciones']}}</small>
+            </div>
+            <div class="field col-12 md:col-2">
+                @if (this.loadingArmarComida) {
+                <button pButton label="Cargando..." class="w-full" disabled></button>
+                }@else{
+                <button pButton label="Consultar" class="w-full" (click)="consultarComida()"></button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (resultadoComida) {
+<div class="card">
+    <div [innerHTML]="resultadoComida"></div>
+</div>
+}

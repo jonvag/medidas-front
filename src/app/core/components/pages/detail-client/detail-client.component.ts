@@ -25,7 +25,8 @@ export class DetailClientComponent {
     email: "",
     password1: ""
   });
-
+  
+  cargandoClient = signal<boolean>(false);
   clientId: string | null = null;
 
   ngOnInit(): void {
@@ -46,6 +47,9 @@ export class DetailClientComponent {
       console.log("Cliente recuperado ", infoClient);
 
       this.infoClient.set(infoClient);
+      this.cargandoClient.set(true);
+
+      console.log("this.infoClient() this.infoClient() ", this.infoClient());
 
     }));
   }

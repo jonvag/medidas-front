@@ -7,6 +7,8 @@ export interface User {
     password2?: string; 
     status?: boolean;
     token?: string;
+    sexo?: string;
+    age?: string;
 }
 
 export interface UserLogin {

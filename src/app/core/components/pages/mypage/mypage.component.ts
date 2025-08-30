@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { LayoutService } from '../../../../layout/service/app.layout.service';
+import { ArmarComidaComponent } from "../../blocks/armar-comida/armar-comida.component";
 
 @Component({
   selector: 'app-mypage',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, ArmarComidaComponent],
   templateUrl: './mypage.component.html',
   styleUrl: './mypage.component.css'
 })
