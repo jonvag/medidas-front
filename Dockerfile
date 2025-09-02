@@ -12,7 +12,4 @@ FROM nginx:alpine
 
 COPY --from=build /app/dist/medidas/browser /usr/share/nginx/html
 
-# Copia configuración personalizada de nginx para Angular
-COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
-
 EXPOSE 80
