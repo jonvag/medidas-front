@@ -1,27 +1,18 @@
-# Usa una imagen de Node.js para construir la aplicación
-FROM node:18.19.1-alpine AS build
+# Dockerfile para Angular
+FROM node:18-alpine as build
 
-# Establece el directorio de trabajo
 WORKDIR /app
-
-# Copia los archivos del proyecto y instala las dependencias
-COPY package.json package-lock.json ./
+COPY package*.json ./
 RUN npm install
-
-# Copia el resto del código fuente
 COPY . .
+RUN npm run build -- --configuration=production
 
-# Construye la aplicación en modo de producción
-RUN npm run build -- --output-path=./dist/out --base-href=/
-
-# Usa una imagen de Nginx para servir la aplicación
+# Etapa de producción
 FROM nginx:alpine
 
-# Copia los archivos de la aplicación desde la etapa de construcción a la carpeta de Nginx
-COPY --from=build /app/dist/out /usr/share/nginx/html
+COPY --from=build /app/dist/medidas/browser /usr/share/nginx/html
 
-# Copia la configuración de Nginx (necesaria para las rutas de Angular)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copia configuración personalizada de nginx para Angular
+COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
 
-# Expone el puerto 80 (puerto por defecto de Nginx)
 EXPOSE 80
