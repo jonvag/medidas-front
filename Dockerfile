@@ -12,4 +12,4 @@ FROM nginx:alpine
 
 COPY --from=build /app/dist/medidas/browser /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 4700
