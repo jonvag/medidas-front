@@ -6,4 +6,4 @@ services:
       dockerfile: Dockerfile
     container_name: medidas-front
     ports:
-    - "4700:4700"  # Mapea el puerto 4700 del host al puerto 4700 del contenedor
+    - "4700:80"
