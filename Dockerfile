@@ -31,9 +31,10 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # La ruta correcta es /app/dist/medidas/browser debido al 'application' builder y tu 'outputPath'.
 COPY --from=build-stage /app/dist/medidas/browser /usr/share/nginx/html
 
-# Ajuste del Puerto (NGINX usa 80 por defecto, lo ajustamos para seguir la convención)
-# Si no cambiaste el puerto 80 en tu nginx.conf, usa EXPOSE 80
-EXPOSE 80
+# Ajuste del Puerto: NGINX estará configurado para escuchar en el puerto 3200
+# Alineamos la instrucción EXPOSE con esa configuración para que las plataformas
+# que detectan el puerto por la imagen lo vean correctamente.
+EXPOSE 3200
 
 # Comando para iniciar NGINX
 CMD ["nginx", "-g", "daemon off;"]
