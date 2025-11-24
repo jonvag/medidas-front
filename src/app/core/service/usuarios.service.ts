@@ -29,23 +29,8 @@ export class UsuariosService {
   }
 
   getClientsById(id_user: string): Observable<any> {
-    return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`).pipe(
-      // 1. Establece un límite de tiempo (Timeout)
-      timeout(100),
-      // 2. Intercepta cualquier error (incluyendo el de Timeout)
-      catchError(error => {
-        console.error('Error al obtener clientes:', error);
-
-        // Puedes agregar lógica para verificar códigos de estado aquí:
-        if (error.status === 401) {
-          // Manejo específico para token expirado, etc.
-          // Podrías devolver un Observable de error customizado
-        }
-
-        // Es crucial devolver un Observable de error para que el subscriber pueda manejarlo
-        return throwError(() => new Error(error.message || 'Error desconocido en getClientsById'));
-      })
-    );
+    console.log("id_user ", id_user);
+    return this.http.get(`${this.urlBase}/api/client/client-user/${id_user}`).pipe(timeout(2000));
   }
 
   deleteClient(id_client: number): Observable<any> {

@@ -146,9 +146,10 @@
 
 				<ng-template pTemplate="footer">
 					<section>
+						@if (indicAgregarOrUpdate === false) {
 						<button pButton pRipple label="Mas datos" icon="pi pi-address-book" class="p-button-text"
 							(click)="editarDataosPaciente()"></button>
-
+						}
 						<button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
 							(click)="hideDialog()"></button>
 						@if (indicAgregarOrUpdate === true) {

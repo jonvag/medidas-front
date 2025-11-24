@@ -1,5 +1,5 @@
 <div class="grid">
-    <div class="card">
+    <div class="card m-auto ">
         <p-tabView orientation="left">
             <p-tabPanel header="Objetivos y estilo de vida" class="line-height-3 m-0">
                 <section>
@@ -25,14 +25,17 @@
                         </div>
                     </div>
 
-                    <div class="formgrid grid" style="width: 70%; margin: auto;">
+                    <div class="formgrid grid col-12" style=" margin: auto;">
                         <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
-                            <label for="tabaco">Tabaco</label>
-                            <p-dropdown id="tabaco" [(ngModel)]="goals.tabaco" [options]="frequencyOptions" placeholder="Seleccione frecuencia"></p-dropdown>
+                            <label for="tabaco" class="w-full">Tabaco</label>
+                            <p-dropdown id="tabaco" [(ngModel)]="goals.tabaco" [options]="frequencyOptions"
+                                placeholder="Seleccione frecuencia" styleClass="w-full">
+                            </p-dropdown>
                         </div>
                         <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
                             <label for="alcohol">Alcohol</label>
-                            <p-dropdown id="alcohol" [(ngModel)]="goals.alcohol" [options]="frequencyOptions" placeholder="Seleccione frecuencia"></p-dropdown>
+                            <p-dropdown id="alcohol" [(ngModel)]="goals.alcohol" [options]="frequencyOptions"
+                                placeholder="Seleccione frecuencia" styleClass="w-full"></p-dropdown>
                         </div>
                     </div>
 
@@ -40,15 +43,18 @@
 
                         <div class="field col-12 md:col-6 lg:col-4 flex flex-column">
                             <label for="hora_dormir">Hora Dormir</label>
-                            <p-dropdown id="hora_dormir" [(ngModel)]="goals.hora_dormir" [options]="timeOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                            <p-dropdown id="hora_dormir" [(ngModel)]="goals.hora_dormir" [options]="timeOptions"
+                                placeholder="Seleccione o escriba" [editable]="true" styleClass="w-full"></p-dropdown>
                         </div>
                         <div class="field col-12 md:col-6 lg:col-4">
                             <label for="hora_despertar">Hora despertar</label>
-                            <p-dropdown id="hora_despertar" [(ngModel)]="goals.hora_despertar" [options]="timeOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                            <p-dropdown id="hora_despertar" [(ngModel)]="goals.hora_despertar" [options]="timeOptions"
+                                placeholder="Seleccione o escriba" [editable]="true" styleClass="w-full"></p-dropdown>
                         </div>
                         <div class="field col-12 md:col-6 lg:col-4">
                             <label for="horas_sueno">Horas sueño</label>
-                            <p-dropdown id="horas_sueno" [(ngModel)]="goals.horas_sueno" [options]="horasSuenoOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                            <p-dropdown id="horas_sueno" [(ngModel)]="goals.horas_sueno" [options]="horasSuenoOptions"
+                                placeholder="Seleccione o escriba" [editable]="true" styleClass="w-full"></p-dropdown>
                         </div>
                     </div>
 

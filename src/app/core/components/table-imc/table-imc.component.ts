@@ -201,42 +201,30 @@ export class TableImcComponent {
     if (infoUser) {
       this.userLoggeado = JSON.parse(infoUser) as User;
 
-      this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe({
-        next: (clientsService: any) => {
+      this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe(((clientsService: any) => {
+        if (clientsService.error) {
 
-          clientsService.forEach((person: Client) => {
-            person.imc = this.functionIMC(person.name, person.peso, person.estatura);
-            person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
-          });
-
-          this.loading = false;
-          this.clients.set(clientsService);
-        },
-
-        // Error: Se ejecuta si el Observable emite un error (por catchError o timeout)
-        error: (error: any) => {
-          this.loading = false; // Detener el spinner
-
-          this.messageService.add({
-            severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
-            summary: 'Error',
-            detail: 'Error al conectar con Backend'
-          });
-
-          // Manejo específico del error
-          if (error.name === 'TimeoutError') {
-            console.error("Error: La solicitud tardó más de 2000ms. (Timeout)");
-          } else if (error.message && error.message.includes('401')) {
-            console.error("No se actualizó la clientsService, debe solicitar otro token.");
-            // Lógica para redirigir o mostrar mensaje de token expirado
-          } else {
-            console.error("Ocurrió un error general:", error);
-          }
-        },
-        complete: () => {
-          console.log('Obtención de clientes completada.');
+          console.log("No se actualizo la clientsService, debe solicitar otro token ");
+          console.log("clientsService ", clientsService);
         }
-      });
+
+
+        clientsService.forEach((person: Client) => {
+          person.imc = this.functionIMC(person.name, person.peso, person.estatura);
+          person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
+        });
+
+        this.loading = false;
+
+
+
+        this.clients.set(clientsService);
+
+
+
+
+
+      }));
     }
 
   }
