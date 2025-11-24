@@ -123,12 +123,6 @@ export class LoginComponent {
           }
           }
 
-          
-          this.messageService.add({
-            severity: 'success', // Tipo de toast: 'success', 'info', 'warn', 'error'
-            summary: 'Éxito',
-            detail: 'Bienvenido!.'
-          });
           this.router.navigateByUrl('/dashboard');
 
         } else if (response.status === 201) {

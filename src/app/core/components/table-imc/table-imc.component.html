@@ -6,94 +6,102 @@
 
 		<!-- formulario ingresar cliente, por default viene oculto -->
 		<section>
-			<p-dialog [(visible)]="createClientDialog" [style]="{width: '450px'}" [header]="dialogHeader" [modal]="true"
+			<p-dialog [(visible)]="createClientDialog" [style]="{width: '80%'}" [header]="dialogHeader" [modal]="true"
 				class="p-fluid">
 				<ng-template pTemplate="content">
-					<div class="field">
-						<label for="name">Nombre</label>
-						<input type="text" pInputText id="name" [(ngModel)]="client.name" required autofocus
-							[ngClass]="{'ng-invalid ng-dirty' : submitted && !client.name}" autocomplete="off" />
-						<small class="p-error" *ngIf="submitted && !client.name">El nombre es requerido.</small>
-					</div>
-					<div class="field">
-						<label for="email">Email</label>
-						<input type="email" pInputText id="email" [(ngModel)]="client.email" required autofocus
-							[ngClass]="{'ng-invalid ng-dirty' : submitted && !client.email}" autocomplete="off" />
-						<small class="p-error" *ngIf="submitted && formErrors()['email']">{{ formErrors()['email']
-							}}</small>
-					</div>
-					<div class="field">
-						<label class="mb-3">Sexo</label>
-						<div class="formgrid grid">
-							<div class="field-radiobutton col-4">
-								<p-radioButton id="hombre" name="sexo" value="M"
-									[(ngModel)]="client.sexo"></p-radioButton>
-								<label for="hombre">Hombre</label>
-							</div>
-							<div class="field-radiobutton col-4">
-								<p-radioButton id="mujer" name="sexo" value="F"
-									[(ngModel)]="client.sexo"></p-radioButton>
-								<label for="mujer">Mujer</label>
-							</div>
-						</div>
-						<small class="p-error" *ngIf="submitted && formErrors()['sexo']">{{ formErrors()['sexo']
-							}}</small>
-					</div>
 					<div class="formgrid grid">
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-4">
+							<label for="name">Nombre</label>
+							<input type="text" pInputText id="name" [(ngModel)]="client.name" required autofocus
+								[ngClass]="{'ng-invalid ng-dirty' : submitted && !client.name}" autocomplete="off" />
+							<small class="p-error" *ngIf="submitted && !client.name">El nombre es requerido.</small>
+						</div>
+						<div class="field col-12 md:col-6 lg:col-4">
+							<label for="email">Email</label>
+							<input type="email" pInputText id="email" [(ngModel)]="client.email" required autofocus
+								[ngClass]="{'ng-invalid ng-dirty' : submitted && !client.email}" autocomplete="off" />
+							<small class="p-error" *ngIf="submitted && formErrors()['email']">{{ formErrors()['email']
+								}}</small>
+						</div>
+						<div class="field col-12 md:col-6 lg:col-4">
+							<label class="mb-3">Sexo</label>
+							<div class="formgrid grid">
+								<div class="field-radiobutton col-4">
+									<p-radioButton id="hombre" name="sexo" value="M"
+										[(ngModel)]="client.sexo"></p-radioButton>
+									<label for="hombre">Hombre</label>
+								</div>
+								<div class="field-radiobutton col-4">
+									<p-radioButton id="mujer" name="sexo" value="F"
+										[(ngModel)]="client.sexo"></p-radioButton>
+									<label for="mujer">Mujer</label>
+								</div>
+							</div>
+							<small class="p-error" *ngIf="submitted && formErrors()['sexo']">{{ formErrors()['sexo']
+								}}</small>
+						</div>
+					</div>
+
+					<div class="formgrid grid">
+						<div class="field col-12 md:col-6 lg:col-3">
+							<label for="age">Fecha de nacimiento NEW</label>
+							<!-- Usar ngModelChange o onSelect para detectar la selección correctamente -->
+							<p-calendar id="born" [(ngModel)]="client.born" [showIcon]="true" inputId="icon"
+								(ngModelChange)="calcularEdad($event)" (onSelect)="calcularEdad($event)"
+								dateFormat="yy-mm-dd"></p-calendar>
+						</div>
+						<div class="field col-12 md:col-6 lg:col-3">
+							<label for="age">Edad</label>
+							<p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0"
+								[maxFractionDigits]="0" mode="decimal" readonly></p-inputNumber>
+						</div>
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="peso">Peso (Kg)</label>
 							<p-inputNumber id="peso" [(ngModel)]="client.peso" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="estatura">Estatura (Metros)</label>
 							<p-inputNumber id="estatura" [(ngModel)]="client.estatura" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
 					</div>
 					<div class="formgrid grid">
-						<div class="field col">
-							<label for="age">Edad</label>
-							<p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0"
-								[maxFractionDigits]="0" mode="decimal"></p-inputNumber>
-						</div>
-						<div class="field col">
+
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="circunferencia">circunferencia de cintura </label>
 							<p-inputNumber id="circunferencia" [(ngModel)]="client.circunferencia"
 								[minFractionDigits]="2" [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-					</div>
-					<div class="formgrid grid">
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="muneca">Muñeca</label>
 							<p-inputNumber id="muneca" [(ngModel)]="client.muneca" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="brazo">Brazo</label>
 							<p-inputNumber id="brazo" [(ngModel)]="client.brazo" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-					</div>
-					<div class="formgrid grid">
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-3">
 							<label for="abdominal">Abdominal</label>
 							<p-inputNumber id="abdominal" [(ngModel)]="client.abdominal" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-						<div class="field col">
+
+					</div>
+					<div class="formgrid grid">
+						<div class="field col-12 md:col-6 lg:col-4">
 							<label for="cadera">Cadera</label>
 							<p-inputNumber id="cadera" [(ngModel)]="client.cadera" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-					</div>
-					<div class="formgrid grid">
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-4">
 							<label for="triceps">Triceps</label>
 							<p-inputNumber id="triceps" [(ngModel)]="client.triceps" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
 						</div>
-						<div class="field col">
+						<div class="field col-12 md:col-6 lg:col-4">
 							<label for="subescapular">Subescapular</label>
 							<p-inputNumber id="subescapular" [(ngModel)]="client.subescapular" [minFractionDigits]="2"
 								[maxFractionDigits]="2" mode="decimal"></p-inputNumber>
@@ -106,47 +114,54 @@
 					</div>
 					<div class="field">
 						<label class="mb-3">Estatus</label>
-						<div class="formgrid grid">
-							<div class="field-radiobutton col-4">
+						<div class="flex flex-wrap gap-3">
+							<div class="field-radiobutton">
 								<p-radioButton id="consulta" name="status" value="Consulta"
 									[(ngModel)]="client.status"></p-radioButton>
 								<label for="consulta">Consulta</label>
 							</div>
-							<div class="field-radiobutton col-4">
+							<div class="field-radiobutton">
 								<p-radioButton id="fijo" name="status" value="Fijo"
 									[(ngModel)]="client.status"></p-radioButton>
 								<label for="fijo">Fijo</label>
 							</div>
-							<div class="field-radiobutton col-4">
-								<p-radioButton id="recomendado" name="status" value="Recomendado"
-									[(ngModel)]="client.status"></p-radioButton>
-								<label for="recomendado">Recomendado</label>
-							</div>
-							<div class="field-radiobutton col-4">
+							<div class="field-radiobutton">
 								<p-radioButton id="gym" name="status" value="Gym"
 									[(ngModel)]="client.status"></p-radioButton>
 								<label for="gym">Gym</label>
 							</div>
-							<div class="field-radiobutton col-4">
+							<div class="field-radiobutton">
 								<p-radioButton id="redes" name="status" value="Redes"
 									[(ngModel)]="client.status"></p-radioButton>
 								<label for="redes">Redes</label>
+							</div>
+							<div class="field-radiobutton">
+								<p-radioButton id="recomendado" name="status" value="Recomendado"
+									[(ngModel)]="client.status"></p-radioButton>
+								<label for="recomendado">Recomendado</label>
 							</div>
 						</div>
 					</div>
 				</ng-template>
 
 				<ng-template pTemplate="footer">
-					<button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
-						(click)="hideDialog()"></button>
-					@if (indicAgregarOrUpdate === true) {
-					<button pButton pRipple label="Crear" icon="pi pi-check" class="p-button-text"
-						(click)="saveClient()"></button>
-					} @else {
-					<button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
-						(click)="saveClient()"></button>
-					}
+					<section>
+						<button pButton pRipple label="Mas datos" icon="pi pi-address-book" class="p-button-text"
+							(click)="editarDataosPaciente()"></button>
+
+						<button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
+							(click)="hideDialog()"></button>
+						@if (indicAgregarOrUpdate === true) {
+						<button pButton pRipple label="Crear" icon="pi pi-check" class="p-button-text"
+							(click)="saveClient()"></button>
+						} @else {
+						<button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
+							(click)="saveClient()"></button>
+						}
+					</section>
 				</ng-template>
+
+
 			</p-dialog>
 		</section>
 
@@ -166,13 +181,14 @@
 				</span>
 				<span class="ml-2">
 					<p-dropdown [options]="motivoOptions" [(ngModel)]="selectedMotivo" placeholder="Filtrar motivo"
-						(onChange)="filterMotivo(dt)" optionLabel="label" optionValue="value" styleClass="w-full sm:w-auto" ></p-dropdown>
+						(onChange)="filterMotivo(dt)" optionLabel="label" optionValue="value"
+						styleClass="w-full sm:w-auto"></p-dropdown>
 				</span>
 			</div>
 			<p-table #dt [value]="this.clients()" [loading]="loading" scrollDirection="both" [scrollable]="true"
 				scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll" responsiveLayout="scroll" [rows]="5"
-				[globalFilterFields]="['name','age','sexo','status']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]"
-				[showCurrentPageReport]="true"
+				[globalFilterFields]="['name','age','sexo','status']" [paginator]="true"
+				[rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
 				currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} entradas"
 				selectionMode="multiple" [rowHover]="true" dataKey="id">
 				<ng-template pTemplate="header">
@@ -187,8 +203,6 @@
 						<th style="width:200px">Estatura</th>
 						<!-- <th style="width:200px">IMC</th> -->
 						<th style="width:200px">Motivo</th>
-						<th style="width:200px">AM</th>
-						<th style="width:200px">%GC</th>
 						<th style="width:220px" alignFrozen="right">Status</th>
 						<th>Options</th>
 					</tr>
@@ -198,7 +212,7 @@
 					<tr>
 						<td style="width:200px" class="font-bold cursor-pointer"><a
 								(click)="router.navigate(['/dashboard/detail-client', customer.id ])">
-								{{customer.name}}</a> </td>
+								{{customer.name | titleCase}}</a> </td>
 						<td style="width:200px" class="hidden" alignFrozen="left">{{customer.id}}</td>
 						<td style="width:200px">{{customer.sexo}}</td>
 						<td style="width:200px">{{customer.age}}</td>
@@ -206,8 +220,6 @@
 						<td style="width:200px">{{customer.estatura}}mts</td>
 						<!-- <td style="width:200px;"><span class="customer-badge status-proposal">proposal</span></td> -->
 						<td style="width:200px">{{customer.status}} </td>
-						<td style="width:200px">function AM</td>
-						<td style="width:200px"><span [class]="'customer-badge status-renewal'" [pTooltip]="mensajeToolTip">function AM</span></td>
 						<td style="width:220px" class="font-bold" alignFrozen="right"><span
 								[class]="'customer-badge status-proposal'">{{customer.tipo}}</span></td>
 						<td>
@@ -241,6 +253,11 @@
 		</section>
 		}
 
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="card">
 	</div>
 </div>
 <p-toast></p-toast>

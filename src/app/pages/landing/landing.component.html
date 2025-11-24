@@ -15,36 +15,25 @@
                 style="top:120px">
                 <ul
                     class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
-                    <li>
-                        <a (click)="scrollToFragment('home')" pRipple
-                            class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a (click)="scrollToFragment('features')" pRipple
-                            class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Features</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a (click)="scrollToFragment('highlights')" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Highlights</span>
+                            <span>Consultas</span>
                         </a>
                     </li>
                     <li>
                         <a (click)="scrollToFragment('pricing')" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Pricing</span>
+                            <span>Nosotros</span>
                         </a>
                     </li>
                 </ul>
                 <div
                     class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <a (click)="router.navigate(['/auth/login'])" pButton pRipple label="Login"
+                    <a (click)="router.navigate(['/auth/login'])" pButton pRipple label="Ingresar"
                         class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></a>
-                    <a (click)="router.navigate(['/auth/register'])" pButton pRipple label="Register"
+                    <a (click)="router.navigate(['/auth/register'])" pButton pRipple label="Registrate"
                         class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></a>
                 </div>
             </div>

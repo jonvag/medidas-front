@@ -5,6 +5,7 @@ export interface Client {
     name: string; 
     email: string; 
     sexo: string;
+    born: Date;
     age: number;
     peso: number;
     estatura: number;
@@ -40,4 +41,16 @@ export interface PesoClient {
     updatedAt?:string;
     createdAt?:string;
     
+}
+
+export interface Goals {
+    client_id?:string;
+    motivo_consulta:string;
+    obje_esperado:string;
+    tabaco:string;
+    alcohol:string;
+    hora_dormir:string;
+    hora_despertar:string;
+    horas_sueno:string;
+    info_adicional:string;
 }

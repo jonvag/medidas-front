@@ -1,0 +1,209 @@
+<div class="grid">
+    <div class="card">
+        <p-tabView orientation="left">
+            <p-tabPanel header="Objetivos y estilo de vida" class="line-height-3 m-0">
+                <section>
+                    <div class="formgrid grid">
+                        <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                            <label for="motivo_consulta">Motivo de consulta</label>
+                            <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea
+                                id="motivo_consulta" [(ngModel)]="goals.motivo_consulta" required autofocus
+                                [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !goals.motivo_consulta}"
+                                autocomplete="off"></textarea>
+                            <small class="p-error" *ngIf="submittedGoals && !goals.motivo_consulta">El motivo es
+                                requerido.</small>
+                        </div>
+                        <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                            <label for="obje_esperado">Objetivos esperados</label>
+                            <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea
+                                id="obje_esperado" [(ngModel)]="goals.obje_esperado" required autofocus
+                                [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !goals.obje_esperado}"
+                                autocomplete="off"></textarea>
+                            <small class="p-error" *ngIf="submittedGoals && formErrorsGoals()['obje_esperado']">{{
+                                formErrorsGoals()['obje_esperado']
+                                }}</small>
+                        </div>
+                    </div>
+
+                    <div class="formgrid grid" style="width: 70%; margin: auto;">
+                        <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                            <label for="tabaco">Tabaco</label>
+                            <p-dropdown id="tabaco" [(ngModel)]="goals.tabaco" [options]="frequencyOptions" placeholder="Seleccione frecuencia"></p-dropdown>
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                            <label for="alcohol">Alcohol</label>
+                            <p-dropdown id="alcohol" [(ngModel)]="goals.alcohol" [options]="frequencyOptions" placeholder="Seleccione frecuencia"></p-dropdown>
+                        </div>
+                    </div>
+
+                    <div class="formgrid grid">
+
+                        <div class="field col-12 md:col-6 lg:col-4 flex flex-column">
+                            <label for="hora_dormir">Hora Dormir</label>
+                            <p-dropdown id="hora_dormir" [(ngModel)]="goals.hora_dormir" [options]="timeOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-4">
+                            <label for="hora_despertar">Hora despertar</label>
+                            <p-dropdown id="hora_despertar" [(ngModel)]="goals.hora_despertar" [options]="timeOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-4">
+                            <label for="horas_sueno">Horas sueño</label>
+                            <p-dropdown id="horas_sueno" [(ngModel)]="goals.horas_sueno" [options]="horasSuenoOptions" placeholder="Seleccione o escriba" [editable]="true"></p-dropdown>
+                        </div>
+                    </div>
+
+                    <div class="formgrid grid">
+                        <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                            <label for="info_adicional">Informacion Adicional</label>
+                            <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea
+                                id="info_adicional" [(ngModel)]="goals.info_adicional" required autofocus
+                                [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !goals.info_adicional}"
+                                autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
+                        (click)="saveGoals()"></button>
+                </ng-template>
+
+            </p-tabPanel>
+            <p-tabPanel header="Header II" class="line-height-3 m-0">
+                <!-- <section>
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="name">Motivo de consulta</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="name"
+                        [(ngModel)]="client.name" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.name}" autocomplete="off"></textarea>
+                    <small class="p-error" *ngIf="submittedGoals && !client.name">El nombre es requerido.</small>
+                </div>
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="email">Objetivos esperados</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="email"
+                        [(ngModel)]="client.email" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.email}" autocomplete="off"></textarea>
+                    <small class="p-error" *ngIf="submittedGoals && formErrorsGoals()['email']">{{ formErrorsGoals()['email']
+                        }}</small>
+                </div>
+            </div>
+
+            <div class="formgrid grid" style="width: 70%; margin: auto;">
+                <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                    <label for="age">Tabaco</label>
+                    <p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0" [maxFractionDigits]="0"
+                        mode="decimal" readonly></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                    <label for="peso">Alcohol</label>
+                    <p-inputNumber id="peso" [(ngModel)]="client.peso" [minFractionDigits]="2" [maxFractionDigits]="2"
+                        mode="decimal"></p-inputNumber>
+                </div>
+            </div>
+
+            <div class="formgrid grid">
+
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="circunferencia">Hora Dormir</label>
+                    <p-inputNumber id="circunferencia" [(ngModel)]="client.circunferencia" [minFractionDigits]="2"
+                        [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="muneca">Hora despertar</label>
+                    <p-inputNumber id="muneca" [(ngModel)]="client.muneca" [minFractionDigits]="2"
+                        [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="brazo">Horas sueño</label>
+                    <p-inputNumber id="brazo" [(ngModel)]="client.brazo" [minFractionDigits]="2" [maxFractionDigits]="2"
+                        mode="decimal"></p-inputNumber>
+                </div>
+            </div>
+
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="cadera">Informacion Adicional</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="cadera"
+                        [(ngModel)]="client.cadera" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.cadera}" autocomplete="off"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <ng-template pTemplate="footer">
+            <button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
+                (click)="saveClient()"></button>
+        </ng-template> -->
+            </p-tabPanel>
+            <p-tabPanel header="Header III" class="line-height-3 m-0">
+                <!-- <section>
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="name">Motivo de consulta</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="name"
+                        [(ngModel)]="client.name" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.name}" autocomplete="off"></textarea>
+                    <small class="p-error" *ngIf="submittedGoals && !client.name">El nombre es requerido.</small>
+                </div>
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="email">Objetivos esperados</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="email"
+                        [(ngModel)]="client.email" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.email}" autocomplete="off"></textarea>
+                    <small class="p-error" *ngIf="submittedGoals && formErrorsGoals()['email']">{{ formErrorsGoals()['email']
+                        }}</small>
+                </div>
+            </div>
+
+            <div class="formgrid grid" style="width: 70%; margin: auto;">
+                <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                    <label for="age">Tabaco</label>
+                    <p-inputNumber id="age" [(ngModel)]="client.age" [minFractionDigits]="0" [maxFractionDigits]="0"
+                        mode="decimal" readonly></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-6 flex flex-column">
+                    <label for="peso">Alcohol</label>
+                    <p-inputNumber id="peso" [(ngModel)]="client.peso" [minFractionDigits]="2" [maxFractionDigits]="2"
+                        mode="decimal"></p-inputNumber>
+                </div>
+            </div>
+
+            <div class="formgrid grid">
+
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="circunferencia">Hora Dormir</label>
+                    <p-inputNumber id="circunferencia" [(ngModel)]="client.circunferencia" [minFractionDigits]="2"
+                        [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="muneca">Hora despertar</label>
+                    <p-inputNumber id="muneca" [(ngModel)]="client.muneca" [minFractionDigits]="2"
+                        [maxFractionDigits]="2" mode="decimal"></p-inputNumber>
+                </div>
+                <div class="field col-12 md:col-6 lg:col-4">
+                    <label for="brazo">Horas sueño</label>
+                    <p-inputNumber id="brazo" [(ngModel)]="client.brazo" [minFractionDigits]="2" [maxFractionDigits]="2"
+                        mode="decimal"></p-inputNumber>
+                </div>
+            </div>
+
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-12 lg:col-12 flex flex-column">
+                    <label for="cadera">Informacion Adicional</label>
+                    <textarea rows="5" cols="30" placeholder="Ingrese descripcion" pInputTextarea id="cadera"
+                        [(ngModel)]="client.cadera" required autofocus
+                        [ngClass]="{'ng-invalid ng-dirty' : submittedGoals && !client.cadera}" autocomplete="off"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <ng-template pTemplate="footer">
+            <button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
+                (click)="saveClient()"></button>
+        </ng-template> -->
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>
+<p-toast></p-toast>

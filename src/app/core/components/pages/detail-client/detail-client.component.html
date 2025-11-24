@@ -1,6 +1,7 @@
 <div class="col-12">
     <h4> <span class="mr-4 cursor-pointer" (click)="goToIMC()"><i
-                class="pi pi-arrow-left text-gray-400 hover:text-gray-100"></i></span> {{this.infoClient().name}}</h4>
+                class="pi pi-arrow-left text-gray-400 hover:text-gray-100"></i></span> {{this.infoClient().name |
+        titlecase}}</h4>
     <div class="card">
         <app-pesos [clientIdHijo]="clientId"></app-pesos>
     </div>
@@ -8,10 +9,10 @@
 
 <div class="col-12">
     <h4> Resumen </h4>
-    @if (this.cargandoClient() ==  true) {
+    @if (this.cargandoClient() == true) {
     <div class="card">
         <app-resumen-client [clientIdHijo]="this.infoClient()"></app-resumen-client>
     </div>
     }
 
-</div>
+</div>ß

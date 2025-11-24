@@ -29,6 +29,8 @@ import { UsuariosService } from '../../service/usuarios.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User, UserLogin } from '../../api/user';
+import { TitleCasePipe } from "../../pipes/title-case.pipe";
+import { CalendarModule } from "primeng/calendar";
 
 interface expandedRows {
   [key: string]: boolean;
@@ -71,7 +73,10 @@ interface ImcDataByAgeRange {
     InputNumberModule,
     RadioButtonModule,
     ConfirmDialogModule,
-    TooltipModule],
+    TooltipModule,
+    TitleCasePipe,
+    CalendarModule
+  ],
   templateUrl: './table-imc.component.html',
   styleUrl: './table-imc.component.css',
   providers: [ConfirmationService, MessageService]
@@ -85,7 +90,7 @@ export class TableImcComponent {
     { label: 'Gym', value: 'Gym' }
   ];
   selectedMotivo: string | null = null;
-  mensajeToolTip:string = "formula usada para calcular el IMC";
+  mensajeToolTip: string = "formula usada para calcular el IMC";
 
   filterMotivo(table: Table) {
     if (this.selectedMotivo) {
@@ -94,6 +99,9 @@ export class TableImcComponent {
       table.filter('', 'status', 'equals');
     }
   }
+
+  edadCalculada: number | null = null;
+  private fechaInicial: Date = new Date(2000, 0, 1);
 
   private usuariosService = inject(UsuariosService);
 
@@ -126,6 +134,7 @@ export class TableImcComponent {
     name: "",
     email: "",
     sexo: "",
+    born: this.fechaInicial,
     age: 0,
     peso: 0,
     estatura: 0,
@@ -155,7 +164,7 @@ export class TableImcComponent {
     email: "",
     password1: ""
   };
-  dialogHeader: string = "Agregar Cliente";
+  dialogHeader: string = "Agregar Paciente";
   indicAgregarOrUpdate: boolean = true;
 
   currentTheme: string = '';
@@ -184,6 +193,7 @@ export class TableImcComponent {
     });
 
     this.cargaInicial();
+
   }
 
   cargaInicial(): void {
@@ -191,23 +201,42 @@ export class TableImcComponent {
     if (infoUser) {
       this.userLoggeado = JSON.parse(infoUser) as User;
 
-      this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe(((clientsService: any) => {
-        if (clientsService.error) {
+      this.usuariosService.getClientsById(this.userLoggeado.id!).subscribe({
+        next: (clientsService: any) => {
 
-          console.log("No se actualizo la clientsService, debe solicitar otro token ");
-          console.log("clientsService ", clientsService);
+          clientsService.forEach((person: Client) => {
+            person.imc = this.functionIMC(person.name, person.peso, person.estatura);
+            person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
+          });
+
+          this.loading = false;
+          this.clients.set(clientsService);
+        },
+
+        // Error: Se ejecuta si el Observable emite un error (por catchError o timeout)
+        error: (error: any) => {
+          this.loading = false; // Detener el spinner
+
+          this.messageService.add({
+            severity: 'error', // Tipo de toast: 'success', 'info', 'warn', 'error'
+            summary: 'Error',
+            detail: 'Error al conectar con Backend'
+          });
+
+          // Manejo específico del error
+          if (error.name === 'TimeoutError') {
+            console.error("Error: La solicitud tardó más de 2000ms. (Timeout)");
+          } else if (error.message && error.message.includes('401')) {
+            console.error("No se actualizó la clientsService, debe solicitar otro token.");
+            // Lógica para redirigir o mostrar mensaje de token expirado
+          } else {
+            console.error("Ocurrió un error general:", error);
+          }
+        },
+        complete: () => {
+          console.log('Obtención de clientes completada.');
         }
-
-        clientsService.forEach((person: Client) => {
-          person.imc = this.functionIMC(person.name, person.peso, person.estatura);
-          person.tipo = this.tipoIMC(person.name, person.age, this.functionIMC(person.name, person.peso, person.estatura), person.sexo);
-        });
-
-        this.loading = false;
-
-        this.clients.set(clientsService);
-
-      }));
+      });
     }
 
   }
@@ -227,6 +256,7 @@ export class TableImcComponent {
         name: user.name,
         email: user.email || '',
         sexo: user.sexo || '',
+        born: this.fechaInicial,
         age: user.age || 0,
         peso: user.peso || 0,
         estatura: user.estatura || 0,
@@ -255,7 +285,13 @@ export class TableImcComponent {
     this.submitted = false;
   }
 
+  editarDataosPaciente() {
+    this.router.navigateByUrl('dashboard/datos-paciente/' + this.client.id);
+
+  }
+
   saveClient() {
+    console.log("Guardando cliente:", this.client.born);
     this.submitted = true;
 
     this.formErrors.set({});
@@ -286,6 +322,7 @@ export class TableImcComponent {
       user_id: this.userLoggeado.id,
       email: this.client.email,
       sexo: this.client.sexo,
+      born: this.client.born,
       age: this.client.age,
       peso: this.client.peso,
       estatura: this.client.estatura,
@@ -299,6 +336,9 @@ export class TableImcComponent {
       status: this.client.status,
       address: this.client.address
     };
+
+    console.log("Formulario a enviar:", form);
+
 
     /* aqui mandar a crear o actualizar */
 
@@ -526,6 +566,7 @@ export class TableImcComponent {
       name: "",
       email: "",
       sexo: "",
+      born: new Date(),
       age: 0,
       peso: 0,
       estatura: 0,
@@ -581,6 +622,32 @@ export class TableImcComponent {
 
   onGlobalFilter(table: Table, event: Event) {
     table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
+  }
+
+  calcularEdad(event?: any): void {
+    // event puede venir como Date (desde onSelect) o como string/Date desde ngModelChange
+    const fechaValor = event ? event : this.client.born;
+
+    // Asegurarse de tener un objeto Date
+    const fechaNacimiento = fechaValor ? new Date(fechaValor) : null;
+    if (!fechaNacimiento || isNaN(fechaNacimiento.getTime())) {
+      // valor inválido
+      this.edadCalculada = null;
+      this.client.age = 0;
+      return;
+    }
+
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+      edad--;
+    }
+
+    this.edadCalculada = edad;
+    // Actualizar el campo age del cliente para que el input refleje el valor
+    this.client.age = edad;
   }
 
 }
