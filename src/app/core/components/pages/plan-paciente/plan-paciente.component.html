@@ -1,0 +1,138 @@
+<div class="col-12">
+    <div class="card">
+        <section>
+            <p-dialog [(visible)]="createClientDialog" [style]="{width: '80%'}" [header]="dialogHeader" [modal]="true"
+                class="p-fluid">
+                <ng-template pTemplate="content">
+
+                    <div class="formgrid grid">
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="lacteos">Lacteos </label>
+                            <input type="text" pInputText id="lacteos" [(ngModel)]="plan.lacteos" required autofocus
+                                autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="vegetales">Vegetales </label>
+                            <input type="text" pInputText id="vegetales" [(ngModel)]="plan.vegetales" required autofocus
+                                autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="frutas">Frutas </label>
+                            <input type="text" pInputText id="frutas" [(ngModel)]="plan.frutas" required autofocus
+                                autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="almidones">Almidones </label>
+                            <input type="text" pInputText id="almidones" [(ngModel)]="plan.almidones" required autofocus
+                                autocomplete="off" />
+                        </div>
+
+                    </div>
+                    <div class="formgrid grid">
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="carnes_magra">Carnes magra </label>
+                            <input type="text" pInputText id="carnes_magra" [(ngModel)]="plan.carnes_magra" required
+                                autofocus autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="carnes_semi">Carnes semi </label>
+                            <input type="text" pInputText id="carnes_semi" [(ngModel)]="plan.carnes_semi" required
+                                autofocus autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="carnes_grasa">Carnes grasas </label>
+                            <input type="text" pInputText id="carnes_grasa" [(ngModel)]="plan.carnes_grasa" required
+                                autofocus autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="grasas">Grasas </label>
+                            <input type="text" pInputText id="grasas" [(ngModel)]="plan.grasas" required autofocus
+                                autocomplete="off" />
+                        </div>
+                    </div>
+
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+                    <section>
+                        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
+                            (click)="hideDialog()"></button>
+                        <button pButton pRipple label="Actualizar" icon="pi pi-check" class="p-button-text"
+                            (click)="saveClientPlan()"></button>
+
+                    </section>
+                </ng-template>
+
+
+            </p-dialog>
+        </section>
+
+        @if (this.plans().length > 0) {
+        <section>
+            <h5>Distribución pacientes</h5>
+            <p-table #dt [value]="this.plans()" [loading]="loading" scrollDirection="both" [scrollable]="true"
+                scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll" responsiveLayout="scroll" [rows]="5"
+                [globalFilterFields]="['name','age','sexo','status']" [paginator]="true"
+                [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
+                currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} entradas"
+                selectionMode="multiple" [rowHover]="true" dataKey="id">
+                <ng-template pTemplate="header">
+
+                    <tr>
+                        <th pSortableColumn="name" style="width:200px">Nombre <p-sortIcon field="name"></p-sortIcon>
+                        </th>
+                        <th style="width:200px" class="hidden" alignFrozen="left">Id</th>
+                        <th style="width:200px">Lacteos</th>
+                        <th style="width:200px">Vegetales</th>
+                        <th style="width:200px">Frutas</th>
+                        <th style="width:200px">Almidones</th>
+                        <th style="width:200px">Carnes magras</th>
+                        <th style="width:200px">Carnes semi</th>
+                        <th style="width:200px">Carnes grasas</th>
+                        <th style="width:200px">Grasas</th>
+                        <!-- <th style="width:200px">Total</th> -->
+                        <th>Options</th>
+                    </tr>
+
+                </ng-template>
+                <ng-template pTemplate="body" let-customer>
+                    <tr>
+                        <td style="width:200px" class="font-bold cursor-pointer"><a
+                                (click)="router.navigate(['/dashboard/detail-client', customer.id ])">
+                                {{customer.name | titleCase}}</a> </td>
+                        <td style="width:200px" class="hidden" alignFrozen="left">{{customer.id}}</td>
+                        <td style="width:200px">{{customer.plan_nutricional.lacteos}}</td>
+                        <td style="width:200px">{{customer.plan_nutricional.vegetales}}</td>
+                        <td style="width:200px">{{customer.plan_nutricional.frutas}} </td>
+                        <td style="width:200px">{{customer.plan_nutricional.almidones}} </td>
+                        <td style="width:200px">{{customer.plan_nutricional.carnes_magra}} </td>
+                        <td style="width:200px">{{customer.plan_nutricional.carnes_semi}} </td>
+                        <td style="width:200px">{{customer.plan_nutricional.carnes_grasa}} </td>
+                        <td style="width:200px">{{customer.plan_nutricional.grasas}} </td>
+                        <!-- <td style="width:200px">{{suma(customer.plan_nutricional.lacteos, customer.plan_nutricional.vegetales, customer.plan_nutricional.frutas, customer.plan_nutricional.almidones, customer.plan_nutricional.carnes_magra, customer.plan_nutricional.carnes_semi, customer.plan_nutricional.carnes_grasa, customer.plan_nutricional.grasas) }}</td>
+                         --><td alignFrozen="right">
+                            <div class="flex gap-2">
+                                <button pButton pRipple type="button" (click)="openNew(customer.plan_nutricional)"
+                                    icon="pi pi-pen-to-square" class="p-button-rounded p-button-success"></button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </section>
+        }@else {
+        <section>
+            <div class="">
+
+                <div class="mt-5">
+                    <span class="">
+                        Debe ingresar un Cliente...
+                    </span>
+                </div>
+            </div>
+        </section>
+        }
+    </div>
+</div>
+
+<p-toast></p-toast>
