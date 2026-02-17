@@ -130,6 +130,8 @@ export class PlanPacienteComponent {
 
       this.plansService.getPlansClients(this.userLoggeado.id!).subscribe(((plansService: any) => {
         console.log("plansService ", plansService);
+        console.log(" uni solo");
+        console.log("plansService ", plansService[0].agente_asociado.codigo);
         if (plansService.error) {
 
           console.log("No se actualizo la plansService, debe solicitar otro token ");
@@ -138,12 +140,13 @@ export class PlanPacienteComponent {
 
         this.loading = false;
         this.plans.set(plansService);
+        console.log("this.plans this.plans ", this.plans());
       }));
     }
 
   }
 
-  openNew(plan: Plan) {
+  openNew(plan: Plan, codigo: string) {
     this.resetForm();
 
     this.indicAgregarOrUpdate = false;
@@ -151,6 +154,7 @@ export class PlanPacienteComponent {
 
     this.plan = {
       id: plan.id,
+      codigo: codigo,
       client_id: plan.client_id,
       lacteos: plan.lacteos,
       vegetales: plan.vegetales,
@@ -246,6 +250,7 @@ export class PlanPacienteComponent {
 
   resetForm() {
     this.plan = {
+      codigo: "",
       lacteos: "0",
       vegetales: "",
       frutas: "",

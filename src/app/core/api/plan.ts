@@ -1,5 +1,6 @@
 export interface Plan {
     id?:number;
+    codigo?: string;
     client_id?: number;
     lacteos: string;
     vegetales: string; 

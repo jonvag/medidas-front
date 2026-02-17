@@ -233,6 +233,27 @@ export class TableImcComponent {
     this.resetForm();
     if (typeof user === 'number') {
       //console.log("Crear Cliente");
+      this.client = {
+        id: '0',
+        name: '',
+        email: '',
+        sexo: '',
+        born: this.fechaInicial,
+        age: 0,
+        peso: 0,
+        estatura: 0,
+        circunferencia: '0',
+        muneca: '0',
+        brazo: '0',
+        abdominal: '0',
+        cadera: '0',
+        triceps: '0',
+        subescapular: '0', // Aquí seteamos el valor inicial en '0'
+        address: '',
+        user_id: this.userLoggeado.id,
+        status: 'Consulta' // Un estatus por defecto
+      };
+
       this.indicAgregarOrUpdate = true;
     } else if (typeof user === 'object' && user !== null && 'id' in user && 'name' in user) {
       this.indicAgregarOrUpdate = false;
@@ -248,13 +269,13 @@ export class TableImcComponent {
         age: user.age || 0,
         peso: user.peso || 0,
         estatura: user.estatura || 0,
-        circunferencia: user.circunferencia || '',
-        muneca: user.muneca || '',
-        brazo: user.brazo || '',
-        abdominal: user.abdominal || '',
-        cadera: user.cadera || '',
-        triceps: user.triceps || '',
-        subescapular: user.subescapular || '',
+        circunferencia: user.circunferencia || '0',
+        muneca: user.muneca || '0',
+        brazo: user.brazo || '0',
+        abdominal: user.abdominal || '0',
+        cadera: user.cadera || '0',
+        triceps: user.triceps || '0',
+        subescapular: user.subescapular || '0',
         address: user.address || '',
         user_id: this.userLoggeado.id,
         status: user.status || 'active'
@@ -315,12 +336,12 @@ export class TableImcComponent {
       peso: this.client.peso,
       estatura: this.client.estatura,
       circunferencia: this.client.circunferencia,
-      muneca: this.client.muneca || '',
-      brazo: this.client.brazo || '',
-      abdominal: this.client.abdominal || '',
-      cadera: this.client.cadera || '',
-      triceps: this.client.triceps || '',
-      subescapular: this.client.subescapular || '',
+      muneca: this.client.muneca || '0',
+      brazo: this.client.brazo || '0',
+      abdominal: this.client.abdominal || '0',
+      cadera: this.client.cadera || '0',
+      triceps: this.client.triceps || '0',
+      subescapular: this.client.subescapular || '0',
       status: this.client.status,
       address: this.client.address
     };

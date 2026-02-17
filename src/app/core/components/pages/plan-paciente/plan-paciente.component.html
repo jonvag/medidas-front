@@ -7,6 +7,11 @@
 
                     <div class="formgrid grid">
                         <div class="field col-12 md:col-6 lg:col-3">
+                            <label for="codigo">Codigo </label>
+                            <input type="text" pInputText id="codigo" [(ngModel)]="plan.codigo" required autofocus
+                                autocomplete="off" />
+                        </div>
+                        <div class="field col-12 md:col-6 lg:col-3">
                             <label for="lacteos">Lacteos </label>
                             <input type="text" pInputText id="lacteos" [(ngModel)]="plan.lacteos" required autofocus
                                 autocomplete="off" />
@@ -82,6 +87,7 @@
                         <th pSortableColumn="name" style="width:200px">Nombre <p-sortIcon field="name"></p-sortIcon>
                         </th>
                         <th style="width:200px" class="hidden" alignFrozen="left">Id</th>
+                        <th style="width:200px">CODIGO</th>
                         <th style="width:200px">Lacteos</th>
                         <th style="width:200px">Vegetales</th>
                         <th style="width:200px">Frutas</th>
@@ -101,6 +107,7 @@
                                 (click)="router.navigate(['/dashboard/detail-client', customer.id ])">
                                 {{customer.name | titleCase}}</a> </td>
                         <td style="width:200px" class="hidden" alignFrozen="left">{{customer.id}}</td>
+                        <td style="width:200px">{{customer.agente_asociado.codigo}}</td>
                         <td style="width:200px">{{customer.plan_nutricional.lacteos}}</td>
                         <td style="width:200px">{{customer.plan_nutricional.vegetales}}</td>
                         <td style="width:200px">{{customer.plan_nutricional.frutas}} </td>
@@ -112,7 +119,7 @@
                         <!-- <td style="width:200px">{{suma(customer.plan_nutricional.lacteos, customer.plan_nutricional.vegetales, customer.plan_nutricional.frutas, customer.plan_nutricional.almidones, customer.plan_nutricional.carnes_magra, customer.plan_nutricional.carnes_semi, customer.plan_nutricional.carnes_grasa, customer.plan_nutricional.grasas) }}</td>
                          --><td alignFrozen="right">
                             <div class="flex gap-2">
-                                <button pButton pRipple type="button" (click)="openNew(customer.plan_nutricional)"
+                                <button pButton pRipple type="button" (click)="openNew(customer.plan_nutricional, customer.agente_asociado.codigo)"
                                     icon="pi pi-pen-to-square" class="p-button-rounded p-button-success"></button>
                             </div>
                         </td>
